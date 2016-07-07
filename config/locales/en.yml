@@ -21,3 +21,20 @@
 
 en:
   hello: "Hello world"
+  static_pages:
+    home_title: "WELCOME TO BOOK REWIEWING SYSTEM"
+    framgia_logo: "Framgia logo"
+  signup:
+    signup_button: "Sign up"
+    login: "Login"
+  title:
+    title_name: "Framgia"
+    text: "This is home page for the"
+    title_facebook: "Facebook Framgia"
+    title_contact: "Contact"
+    title_help: "Help"
+    title_about: "About"
+    title_home: "Home"
+    RubyonRails: "Ruby on Rails Tutorial"
+    company: "Framgia VietNam"
+    home: "BOOK REVIEWING SYSTEM"
