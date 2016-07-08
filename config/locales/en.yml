@@ -27,6 +27,7 @@ en:
   signup:
     signup_button: "Sign up"
     login: "Login"
+    logout: "Logout"
   title:
     title_name: "Framgia"
     text: "This is home page for the"
@@ -38,3 +39,7 @@ en:
     RubyonRails: "Ruby on Rails Tutorial"
     company: "Framgia VietNam"
     home: "BOOK REVIEWING SYSTEM"
+    new: "New User"
+    account: "Account"
+  flash:
+    danger: "Invalid email/password combination"
