@@ -31,6 +31,11 @@ en:
     confirm: "Comfirmation"
     invite_create: "Create my account"
   title:
+    update: "Update Your Profile"
+    stt: "STT"
+    all_users: "All Users"
+    name: "Name"
+    email: "Email"
     title_name: "Framgia"
     text: "This is home page for the"
     title_facebook: "Facebook Framgia"
@@ -43,9 +48,18 @@ en:
     home: "BOOK REVIEWING SYSTEM"
     new: "New User"
     account: "Account"
+    user: "Users"
+    profile: "Profile"
+    setting: "Settings"
+    CRUD: "Action"
   flash:
     danger: "Invalid email/password combination"
     message: "The form contains"
     error: "error"
   page:
     recruit: "http://recruit.framgia.vn/"
+    update: "Profile Update"
+    action: "Please log in"
+  users:
+    submit: "Save changes"
+    imformation: "Imformation"
