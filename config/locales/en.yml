@@ -28,6 +28,8 @@ en:
     signup_button: "Sign up"
     login: "Login"
     logout: "Logout"
+    confirm: "Comfirmation"
+    invite_create: "Create my account"
   title:
     title_name: "Framgia"
     text: "This is home page for the"
@@ -43,3 +45,7 @@ en:
     account: "Account"
   flash:
     danger: "Invalid email/password combination"
+    message: "The form contains"
+    error: "error"
+  page:
+    recruit: "http://recruit.framgia.vn/"
