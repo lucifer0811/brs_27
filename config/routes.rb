@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :categories, only: :index
   resources :books
+  resources :requests, only: [:add, :edit]
   resources :users do
     member do
       get :following, :followers
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   resources :user_relationships, only: [:create, :destroy]
 
   namespace :admin do
+    resources :users, only: [:index, :destroy]
     resources :categories
   end
   # The priority is based upon order of creation: first created -> highest priority.
