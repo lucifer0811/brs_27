@@ -1,0 +1,18 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= t "title.stt" %></th>
+      <th><%= t "category.name" %></th>
+      <th><%= t "category.description" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each_with_index do |category, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= link_to category.category_name, category%></td>
+        <td><%= category.descriptions %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

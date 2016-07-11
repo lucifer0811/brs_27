@@ -52,6 +52,7 @@ en:
     profile: "Profile"
     setting: "Settings"
     CRUD: "Action"
+    category: "Categories"
   flash:
     danger: "Invalid email/password combination"
     message: "The form contains"
@@ -63,3 +64,6 @@ en:
   users:
     submit: "Save changes"
     imformation: "Imformation"
+  categories:
+    name: "Category name"
+    description: "Descriptions"

@@ -13,3 +13,10 @@ User.create!(name:  "admin",
     password: password,
     password_confirmation: password)
 end
+
+10.times do |n|
+  name = Faker::Name.name
+  descriptions  = "abc-#{n+1}-cba"
+  Category.create!(category_name: name,
+    descriptions: descriptions)
+end
