@@ -70,8 +70,12 @@ en:
     name: "Name"
     description: "Description"
     number: "Number Book"
+    create: "Category Create"
+    add: "New Category"
+    fail_create: "Failed to create new category"
   user_relationship:
     stats_following: "Following"
     stats_followers: "Followers"
     button_unfollow: "Unfollow"
     button_follow: "Follow"
+
