@@ -21,3 +21,11 @@ end
   Category.create!(category_name: name,
     descriptions: descriptions)
 end
+
+# Following relationships
+users = User.all
+user  = users.first
+following = users[2..20]
+followers = users[3..20]
+following.each {|followed| user.follow(followed)}
+followers.each {|follower| follower.follow(user)}
