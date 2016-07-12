@@ -70,3 +70,8 @@ en:
     name: "Name"
     description: "Description"
     number: "Number Book"
+  user_relationship:
+    stats_following: "Following"
+    stats_followers: "Followers"
+    button_unfollow: "Unfollow"
+    button_follow: "Follow"
