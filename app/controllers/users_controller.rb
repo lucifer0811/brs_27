@@ -37,17 +37,11 @@ class UsersController < ApplicationController
     end
   end
 
+
   private
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
-  end
-
-  def logged_in_user
-    unless logged_in?
-      flash[:danger] = t "flash.action"
-      redirect_to login_url
-    end
   end
 
   def correct_user

@@ -58,6 +58,7 @@ en:
     message: "The form contains"
     error: "error"
     no_object: "no category"
+    user_nil: "User not found!"
   page:
     recruit: "http://recruit.framgia.vn/"
     update: "Profile Update"
