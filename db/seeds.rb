@@ -22,6 +22,19 @@ end
     descriptions: descriptions)
 end
 
+30.times do |n|
+  name = Faker::Lorem.words(4).map(&:capitalize).join(' ')
+  author_name = Faker::Name.name
+  date = Faker::Date.between(10.years.ago, 5.years.ago).to_date
+  page_number = Faker::Number.between 100, 1000
+  category = Faker::Number.between 1, 5
+  Book.create!(title: name,
+    author: author_name,
+    publish_date: date,
+    number_of_page: page_number,
+    category_id: category
+  )
+end
 # Following relationships
 users = User.all
 user  = users.first
