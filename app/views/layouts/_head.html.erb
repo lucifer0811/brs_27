@@ -3,7 +3,7 @@
     <%= link_to "Book Reviewing System", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("title.title_home"), root_path %></li>
+        <li><%= link_to t("title.title_home"), categories_path %></li>
         <li><%= link_to t("title.title_help"), help_path %></li>
         <% if logged_in? %>
           <li><%= link_to t("title.user"), users_path %></li>
