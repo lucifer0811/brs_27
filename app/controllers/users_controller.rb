@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:success] = t "flash.update"
+      flash[:success] = t "page.update"
       redirect_to @user
     else
       render :edit
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    redirect_to root_url unless @user.current_user? current_user
+    redirect_to root_url unless current_user? @user
   end
 
   def find_by_id
