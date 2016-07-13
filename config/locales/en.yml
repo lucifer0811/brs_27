@@ -20,6 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  book:
+    book_page_title: "All Books"
+    book_index_name: "Name"
+    book_index_number_of_page: "Number of Pages"
+    book_index_publish_date: "Publish Date"
+    book_index_author: "Author"
+    book_create_fail: "Failed to add new book"
+    book_create_success: "Added new book"
   hello: "Hello world"
   static_pages:
     home_title: "WELCOME TO BOOK REWIEWING SYSTEM"
@@ -53,6 +61,7 @@ en:
     setting: "Settings"
     CRUD: "Action"
     category: "Categories"
+    book_header: "Browse Book"
   flash:
     danger: "Invalid email/password combination"
     message: "The form contains"

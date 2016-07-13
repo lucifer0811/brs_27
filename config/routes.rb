@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
 
 
+
   resources :categories, only: :index
+  resources :books
   resources :users do
     member do
       get :following, :followers

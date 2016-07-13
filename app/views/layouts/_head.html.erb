@@ -5,6 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("title.title_home"), categories_path %></li>
         <li><%= link_to t("title.title_help"), help_path %></li>
+        <li><%= link_to t("title.book_header"), books_path %></li>
         <% if logged_in? %>
           <% if current_user.is_admin? %>
             <li><%= link_to t("title.user"), users_path %></li>
