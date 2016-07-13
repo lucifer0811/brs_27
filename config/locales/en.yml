@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  review:
+
   book:
     new: "New Book"
     create: "Create new book"
@@ -71,8 +73,12 @@ en:
     error: "error"
     no_object: "no category"
     user_nil: "User not found!"
+    review_nil: "Review not found"
+    review_create_success: "Added new review"
+    review_create_fail: "Fail to create review"
     success: "Imformation update"
     fail: "No update"
+    no_review: "Review not found"
   page:
     recruit: "http://recruit.framgia.vn/"
     update: "Profile Update"
@@ -96,3 +102,8 @@ en:
     stats_followers: "Followers"
     button_unfollow: "Unfollow"
     button_follow: "Follow"
+  review:
+    review_index_name: "Reviews"
+    review_index_author: "By"
+    review_index_publish_date: "Time"
+

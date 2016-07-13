@@ -1,9 +1,10 @@
 class BooksController < ApplicationController
-  before_action :logged_in_user, only: [:index, :show]
   before_action :load_book, only: :show
   before_action :check_book, only: :show
 
   def show
+    @reviews = Review.all.order("created_at DESC").where(book_id: params[:id])
+      .paginate(page: params[:page], per_page: Settings.users.per_page)
   end
 
   def index
@@ -21,7 +22,6 @@ class BooksController < ApplicationController
       render :new
     end
   end
-
   private
 
   def load_book
