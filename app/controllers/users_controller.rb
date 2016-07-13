@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :show]
-  before_action :find_by_id, only: [:show, :update, :edit]
+  before_action :find_by_id, only: [:show, :update, :edit, :destroy]
   before_action :correct_user, only: [:edit, :update]
 
   def show
@@ -36,7 +36,6 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
 
   private
   def user_params

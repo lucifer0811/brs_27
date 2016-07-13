@@ -77,6 +77,7 @@ en:
   users:
     submit: "Save changes"
     imformation: "Imformation"
+    delete_success: "user is deleted"
   categories:
     name: "Name"
     description: "Description"
@@ -92,4 +93,3 @@ en:
     stats_followers: "Followers"
     button_unfollow: "Unfollow"
     button_follow: "Follow"
-
