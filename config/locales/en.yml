@@ -59,6 +59,8 @@ en:
     error: "error"
     no_object: "no category"
     user_nil: "User not found!"
+    success: "Imformation update"
+    fail: "No update"
   page:
     recruit: "http://recruit.framgia.vn/"
     update: "Profile Update"
@@ -73,6 +75,9 @@ en:
     create: "Category Create"
     add: "New Category"
     fail_create: "Failed to create new category"
+    update: "Update Category"
+    action: "Action"
+    edit: "Edit"
   user_relationship:
     stats_following: "Following"
     stats_followers: "Followers"

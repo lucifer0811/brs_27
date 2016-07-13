@@ -3,16 +3,20 @@
     <tr>
       <th><%= t "title.stt" %></th>
       <th><%= t "categories.name" %></th>
-      <th><%= t "categories.number" %></th>
+      <th><%= t "categories.action" %></th>
     </tr>
   </thead>
   <tbody>
     <% @categories.each_with_index do |category, index| %>
       <tr>
         <td><%= index + 1 %></td>
-        <td><%= category.category_name%></td>
-        <td><%= category.number_book %></td>
+        <td><%= link_to category.category_name,
+              admin_category_path(category) %></td>
+        <td><%= link_to t("categories.edit"),
+              edit_admin_category_path(category),
+              class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+

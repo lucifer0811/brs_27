@@ -13,14 +13,17 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
 
 
-  resources :categories
+  resources :categories, only: :index
   resources :users do
     member do
       get :following, :followers
     end
   end
-  resources :user_relationships,    only: [:create, :destroy]
+  resources :user_relationships, only: [:create, :destroy]
 
+  namespace :admin do
+    resources :categories
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
