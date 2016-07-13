@@ -1,6 +1,6 @@
 class Book < ActiveRecord::Base
   belongs_to :category
-  has_many :view, dependent: :destroy
+  has_many :review, dependent: :destroy
 
   mount_uploader :picture, PictureUploader
   validate :picture_size
