@@ -1,6 +1,9 @@
 class Admin::BooksController < ApplicationController
-  before_action :load_book, only: [:show, :update]
-  before_action :load_categories, only: [:create, :new]
+  before_action :load_book, only: [:show, :update, :edit]
+  before_action :load_categories, only: [:create, :new, :edit]
+
+  def show
+  end
 
   def new
     @book = Book.new
@@ -26,11 +29,14 @@ class Admin::BooksController < ApplicationController
   def update
     if @book.update_attributes book_params
       flash[:success] = t "flash.success"
-      redirect_to books_path(@book)
+      redirect_to admin_book_path(@book)
     else
       flash[:danger] = t "flash.fail"
       render :edit
     end
+  end
+
+  def edit
   end
 
   private
@@ -41,7 +47,7 @@ class Admin::BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit :title, :author, :publish_date,
-      :number_of_page, :category_id
+      :number_of_page, :category_id, :picture
   end
 
   def load_categories
