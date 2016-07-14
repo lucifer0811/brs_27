@@ -1,13 +1,6 @@
 class Admin::RequestsController<ApplicationController
-  def create
-  end
 
   def show
+    @requests=Request.all.order(updated_at: :desc).paginate page: params[:page]
   end
-
-  def destroy
-  end
-
-  private
-  def request_params
-  end
+end

@@ -22,7 +22,6 @@ class RequestsController < ApplicationController
   end
 
   private
-
   def request_params
     params.require(:request).permit :book_name
   end
