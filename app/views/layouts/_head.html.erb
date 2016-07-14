@@ -8,19 +8,12 @@
             <li><%= link_to t("title.book_header"), admin_books_path %></li>
             <li><%= link_to t("title.user"), admin_users_path %></li>
             <li><%= link_to t("title.category"), admin_categories_path %></li>
+            <li><%= link_to t("tille.request"), admin_requests_path %></li>
           <% else %>
             <li><%= link_to t("title.book_header"), books_path %></li>
             <li><%= link_to t("title.user"), users_path %></li>
             <li><%= link_to t("title.category"), categories_path %></li>
-            <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%= t "Request" %> <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "add request", "https://facebook.com" %></li>
-              <li><%= link_to "show request", "https://google.com" %></li>
-            </ul>
-            </li>
+            <li><%= link_to t("title.request"), requests_path %></li>
           <% end %>
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

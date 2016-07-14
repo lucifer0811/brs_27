@@ -45,8 +45,6 @@ ActiveRecord::Schema.define(version: 20160714030022) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
-    t.string   "descriptions"
-    t.integer  "number_book"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -89,10 +87,6 @@ ActiveRecord::Schema.define(version: 20160714030022) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  add_index "user_relationships", ["followed_id"], name: "index_user_relationships_on_followed_id"
-  add_index "user_relationships", ["follower_id", "followed_id"], name: "index_user_relationships_on_follower_id_and_followed_id", unique: true
-  add_index "user_relationships", ["follower_id"], name: "index_user_relationships_on_follower_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

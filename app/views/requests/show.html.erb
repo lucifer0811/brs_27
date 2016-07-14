@@ -1,0 +1,17 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section class="request_form">
+      <%= render "shared/request_form" %>
+    </section>
+  </aside>
+</div>
+
+<div class="col-md-8">
+  <% if @user.requests.any? %>
+    <h3><%= t "title.request" %> (<%= @user.requests.count %>)</h3>
+    <ol class="requests">
+      <%= render @requests %>
+    </ol>
+     <%= will_paginate @requests %>
+  <% end %>
+</div>
