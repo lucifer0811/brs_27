@@ -3,14 +3,13 @@
     <%= link_to "Book Reviewing System", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("title.title_home"), categories_path %></li>
-        <li><%= link_to t("title.title_help"), help_path %></li>
-        <li><%= link_to t("title.book_header"), books_path %></li>
         <% if logged_in? %>
           <% if current_user.is_admin? %>
+            <li><%= link_to t("title.book_header"), admin_books_path %></li>
             <li><%= link_to t("title.user"), admin_users_path %></li>
             <li><%= link_to t("title.category"), admin_categories_path %></li>
           <% else %>
+            <li><%= link_to t("title.book_header"), books_path %></li>
             <li><%= link_to t("title.user"), users_path %></li>
             <li><%= link_to t("title.category"), categories_path %></li>
             <li class="dropdown">

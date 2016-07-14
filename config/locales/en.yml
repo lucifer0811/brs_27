@@ -21,6 +21,8 @@
 
 en:
   book:
+    new: "New Book"
+    create: "Create new book"
     book_page_title: "All Books"
     book_index_name: "Name"
     book_index_number_of_page: "Number of Pages"
@@ -28,6 +30,7 @@ en:
     book_index_author: "Author"
     book_create_fail: "Failed to add new book"
     book_create_success: "Added new book"
+    book_index_category: "Category"
   hello: "Hello world"
   static_pages:
     home_title: "WELCOME TO BOOK REWIEWING SYSTEM"

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
 
   resources :categories, only: :index
-  resources :books
+  resources :books, only: :index
   resources :requests, only: [:add, :edit]
   resources :users do
     member do
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :destroy]
     resources :categories
+    resources :books
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

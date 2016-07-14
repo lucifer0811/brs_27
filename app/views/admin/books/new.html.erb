@@ -1,0 +1,28 @@
+<% provide(:title, t("books.category_button")) %>
+<h1> <%= t "book.new" %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @book] do |f| %>
+      <%= render "shared/error_messages", object: @book %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+
+      <%= f.label :author %>
+      <%= f.text_field :author, class: "form-control" %>
+
+      <%= f.label :publish_date %>
+      <%= f.date_select :publish_date, order: [:month, :day, :year] %>
+
+      <%= f.label :number_of_page %>
+      <%= f.number_field :number_of_page, class: "form-control" %>
+
+      <%= f.label :category_id %>
+      <%= f.collection_select :category_id, @categories, :id, :category_name,
+        class: "form-control" %>
+
+      <%= f.submit  t("book.create"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
