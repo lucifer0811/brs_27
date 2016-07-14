@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
 
 
-
+  resources :reviews
   resources :categories, only: :index
-  resources :books, only: :index
+  resources :books, only: [:index, :show]
   resources :requests, only: [:add, :edit]
   resources :users do
     member do

@@ -35,6 +35,19 @@ end
     category_id: category
   )
 end
+
+3.times do |n|
+  content = Faker::Lorem.paragraphs.join(' ')
+  title = Faker::Lorem.words(2).join(' ')
+  Review.create!(
+    title: title,
+    user_id: 1,
+    book_id: 1,
+    content: content
+    )
+end
+
+
 # Following relationships
 users = User.all
 user  = users.first
