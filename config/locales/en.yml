@@ -119,3 +119,7 @@ en:
     fail: "Request is not created"
   picture:
     validate: "should be less than 5MB"
+  comment:
+    posted: "Posted"
+    ago: "ago"
+    title: "Comments"

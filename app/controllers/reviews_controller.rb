@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
   def show
     @review = Review.find_by id: params[:id]
       flash[:danger] = t "flash.no_review" unless @review
+    @comments = @review.comments.most_recent.paginate page: params[:page]
   end
 
 
