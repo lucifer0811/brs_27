@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  button:
+    title: "Title"
+    author: "Author"
   book:
     update: "Update Imformation Book"
     new: "New Book"
@@ -72,6 +75,7 @@ en:
     category: "Categories"
     book_header: "Browse Book"
     request: "Request"
+    manager: "Manager"
   flash:
     danger: "Invalid email/password combination"
     message: "The form contains"
@@ -112,6 +116,7 @@ en:
     review_index_name: "Reviews"
     review_index_author: "By"
     review_index_publish_date: "Time"
+    add: "Add review"
   request:
     created: "Request was created"
     suggest: "Compose new request..."
@@ -123,3 +128,8 @@ en:
     posted: "Posted"
     ago: "ago"
     title: "Comments"
+  placeholder:
+    title: "Title......"
+    review: "Compose new review..."
+    search: "search by title or author...."
+

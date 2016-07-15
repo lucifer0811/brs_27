@@ -14,12 +14,12 @@ Rails.application.routes.draw do
   get "/requests", to: "requests#show"
   get "/admin/requests", to: "admin/requests#show"
 
-
-  resources :reviews
   resources :categories, only: :index
   resources :books, only: [:index, :show]
   resources :requests, only: [:add, :edit]
-  resources :books
+  resources :books do
+    resources :reviews
+  end
   resources :users do
     member do
       get :following, :followers

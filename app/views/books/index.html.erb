@@ -1,3 +1,10 @@
 <h1><%= t "book.book_page_title" %></h1>
-  <%= render "book_index" %>
-<%= will_paginate %>
+<div class="row">
+  <div>
+    <%= render "form_search" %>
+  </div>
+  <div>
+    <%= render "book_index" %>
+    <%= will_paginate %>
+  </div>
+</div>
