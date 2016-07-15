@@ -14,8 +14,8 @@
         <td><%= user.email %></td>
         <td>
           <% if !(user.is_admin?) %>
-            <%=link_to "delete", [:admin, user], method: :delete,
-              data: {confirm: "You sure?" } %>
+            <%=link_to "delete", [:admin, user],class: "btn btn-primary",
+              method: :delete, data: {confirm: t("flash.check") } %>
           <% end %>
         </td>
       </tr>
