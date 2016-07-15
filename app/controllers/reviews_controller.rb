@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :logged_in_user, only: [:index, :show]
+  before_action :logged_in_user, only: [:create, :destroy]
   before_action :find_book
 
   def index
@@ -13,6 +13,9 @@ class ReviewsController < ApplicationController
     @review = Review.find_by id: params[:id]
       flash[:danger] = t "flash.no_review" unless @review
     @comments = @review.comments.most_recent.paginate page: params[:page]
+    if logged_in?
+      @comment = current_user.comments.build
+    end
   end
 
 
@@ -42,4 +45,5 @@ class ReviewsController < ApplicationController
   def find_book
     @book = Book.find_by id: params[:book_id]
   end
+
 end

@@ -7,13 +7,26 @@
     <%= @review.created_at.to_s %> </br>
     <%= @review.content %>
   </div>
-
+  <% if logged_in? %>
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="comment_form">
+          <%= render "comments/comment_form" %>
+        </section>
+      </aside>
+    </div>
+  <% end %>
   <div class="col-md-8">
       <% if @review.comments.any? %>
-        <h3><%= t "comment.title" %> (<%= @review.comments.count %>)</h3>
-        <ol class="comments">
-          <%= render @comments %>
-        </ol>
+
+        <div id = "comment-count">
+          <%= render "comments/comment_header" %>
+        </div>
+
+          <ol class="comments">
+            <%= render @comments %>
+          </ol>
+
         <%= will_paginate @comments %>
       <% end %>
   </div>

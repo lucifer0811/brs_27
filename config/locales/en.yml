@@ -135,8 +135,14 @@ en:
     posted: "Posted"
     ago: "ago"
     title: "Comments"
+    post_button: "Post"
+    alert_blank: "Comment cannot be blank"
+    success: "Comment posted"
+    failed: "Comment cannot be posted"
+    placeholder: "Add new comment"
+    delete_failed: "Failed to delete comment"
+    delete_success: "Comment deleted"
   placeholder:
     title: "Title......"
     review: "Compose new review..."
     search: "search by title or author...."
-

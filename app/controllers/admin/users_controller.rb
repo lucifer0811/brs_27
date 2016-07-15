@@ -6,6 +6,7 @@ class Admin::UsersController < ApplicationController
     @users = User.order(updated_at: :desc).paginate page: params[:page],
       per_page: Settings.users.per_page
   end
+
   def destroy
     @user=User.find_by id:params[:id]
     unless @user.nil?

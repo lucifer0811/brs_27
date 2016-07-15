@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "/requests", to: "requests#show"
   get "/admin/requests", to: "admin/requests#show"
 
+
+  resources :comments, only: [:create, :destroy]
   resources :categories, only: :index
   resources :books, only: [:index, :show]
   resources :requests, only: [:add, :edit]
