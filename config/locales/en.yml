@@ -68,6 +68,7 @@ en:
     CRUD: "Action"
     category: "Categories"
     book_header: "Browse Book"
+    request: "Request"
   flash:
     danger: "Invalid email/password combination"
     message: "The form contains"
@@ -108,3 +109,8 @@ en:
     review_index_author: "By"
     review_index_publish_date: "Time"
 
+  request:
+    created: "Request was created"
+    suggest: "Compose new request..."
+    post: "Post"
+    fail: "Request is not created"

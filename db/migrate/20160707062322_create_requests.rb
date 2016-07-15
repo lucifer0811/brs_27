@@ -1,11 +1,12 @@
 class CreateRequests < ActiveRecord::Migration
   def change
     create_table :requests do |t|
-      t.integer :user_id
       t.boolean :is_approved
       t.string :book_name
+      t references :user, foreign_key: true
 
-      t.timestamps null: false
+      t.timestamps
     end
+    add_index :requests, [:user_id, :created_at]
   end
 end

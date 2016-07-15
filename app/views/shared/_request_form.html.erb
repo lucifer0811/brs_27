@@ -1,0 +1,7 @@
+<%= form_for @new_request do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <%= f.text_area :book_name, placeholder: (t "request.suggest") %>
+  </div>
+  <%= f.submit t "request.post", class: "btn btn-primary" %>
+<% end %>

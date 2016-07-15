@@ -11,12 +11,14 @@ Rails.application.routes.draw do
   post "/login",    to: "sessions#create"
   delete  "/logout", to: "sessions#destroy"
   post "/signup", to: "users#create"
+  get "/requests", to: "requests#show"
 
 
   resources :reviews
   resources :categories, only: :index
   resources :books, only: [:index, :show]
   resources :requests, only: [:add, :edit]
+  resources :books
   resources :users do
     member do
       get :following, :followers
@@ -28,7 +30,9 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy]
     resources :categories
     resources :books
+    resources :requests, only:[:index, :destroy, :edit]
   end
+  resources :requests, only: [:create, :destroy, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
