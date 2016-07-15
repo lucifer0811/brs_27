@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete  "/logout", to: "sessions#destroy"
   post "/signup", to: "users#create"
   get "/requests", to: "requests#show"
+  get "/admin/requests", to: "admin/requests#show"
 
 
   resources :reviews
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy]
     resources :categories
     resources :books
-    resources :requests, only:[:index, :destroy, :edit]
+    resources :requests, only:[:show, :destroy, :edit]
   end
   resources :requests, only: [:create, :destroy, :show]
   # The priority is based upon order of creation: first created -> highest priority.
