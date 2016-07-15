@@ -47,6 +47,14 @@ end
     )
 end
 
+3.times do |n|
+  content = Faker::Lorem.paragraphs.join(' ')
+  Comment.create!(
+    user_id: 1,
+    review_id: 3,
+    content: content
+    )
+end
 
 # Following relationships
 users = User.all

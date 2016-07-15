@@ -7,4 +7,14 @@
     <%= @review.created_at.to_s %> </br>
     <%= @review.content %>
   </div>
+
+  <div class="col-md-8">
+      <% if @review.comments.any? %>
+        <h3><%= t "comment.title" %> (<%= @review.comments.count %>)</h3>
+        <ol class="comments">
+          <%= render @comments %>
+        </ol>
+        <%= will_paginate @comments %>
+      <% end %>
+  </div>
 </div>
