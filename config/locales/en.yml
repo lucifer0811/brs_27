@@ -20,11 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  review:
-
   book:
+    update: "Update Imformation Book"
     new: "New Book"
     create: "Create new book"
+    cover: "Image"
     book_page_title: "All Books"
     book_index_name: "Name"
     book_index_number_of_page: "Number of Pages"
@@ -33,6 +33,7 @@ en:
     book_create_fail: "Failed to add new book"
     book_create_success: "Added new book"
     book_index_category: "Category"
+    edit: "Edit"
   hello: "Hello world"
   static_pages:
     home_title: "WELCOME TO BOOK REWIEWING SYSTEM"

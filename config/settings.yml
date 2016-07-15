@@ -1,3 +1,4 @@
 enabled_locales: ["en"]
 users:
   per_page: 10
+  size: "400x300"

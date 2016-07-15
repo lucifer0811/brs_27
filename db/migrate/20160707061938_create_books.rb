@@ -8,7 +8,7 @@ class CreateBooks < ActiveRecord::Migration
       t.integer :category_id
       t.string  :rate
       t.integer :number_of_rate
-      t.string :cover
+      t.string :picture
 
       t.timestamps null: false
     end

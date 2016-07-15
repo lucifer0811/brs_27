@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20160714030022) do
     t.integer  "category_id"
     t.string   "rate"
     t.integer  "number_of_rate"
-    t.string   "cover"
+    t.string   "picture"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
