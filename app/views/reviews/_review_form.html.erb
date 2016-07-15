@@ -1,0 +1,9 @@
+    <%= form_for Review.create do |f| %>
+      <%= f.label :title %>
+      <div><%= hidden_field_tag :user_id, current_user.id %></div>
+      <div><%= hidden_field_tag :book_id, @book.id %></div>
+      <%= f.text_field :title, placeholder: "Title..." %>
+      <%= f.text_area :content, placeholder: "Compose new review..." %>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>

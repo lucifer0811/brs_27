@@ -9,3 +9,13 @@
 </div>
 
 <%= render "reviews/index" %>
+
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="review_form">
+        <%= render "reviews/review_form" %>
+      </section>
+    </aside>
+  </div>
+<% end %>
