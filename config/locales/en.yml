@@ -33,7 +33,10 @@ en:
     book_create_fail: "Failed to add new book"
     book_create_success: "Added new book"
     book_index_category: "Category"
+    delete: "Delete"
     edit: "Edit"
+    book_delete: "Book Delete"
+    fail: "Failed to delete Book"
   hello: "Hello world"
   static_pages:
     home_title: "WELCOME TO BOOK REWIEWING SYSTEM"
@@ -81,6 +84,7 @@ en:
     success: "Imformation update"
     fail: "No update"
     no_review: "Review not found"
+    check: "You sure?"
   page:
     recruit: "http://recruit.framgia.vn/"
     update: "Profile Update"
@@ -108,9 +112,10 @@ en:
     review_index_name: "Reviews"
     review_index_author: "By"
     review_index_publish_date: "Time"
-
   request:
     created: "Request was created"
     suggest: "Compose new request..."
     post: "Post"
     fail: "Request is not created"
+  picture:
+    validate: "should be less than 5MB"
