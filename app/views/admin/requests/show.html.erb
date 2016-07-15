@@ -1,9 +1,3 @@
-<div class="row">
-  <% if @requests.any? %>
-    <h3><%= t "title.request" %> (<%= @requests.size %>)</h3>
-    <ol class="requests">
-      <%= render @requests %>
-    </ol>
-     <%= will_paginate @requests %>
-  <% end %>
-</div>
+<h1><%= t "title.all_requests" %></h1>
+    <%= render "request" %>
+<%= will_paginate %>

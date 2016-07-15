@@ -76,6 +76,7 @@ en:
     book_header: "Browse Book"
     request: "Request"
     manager: "Manager"
+    all_requests: "All requests"
   flash:
     danger: "Invalid email/password combination"
     message: "The form contains"
@@ -122,6 +123,12 @@ en:
     suggest: "Compose new request..."
     post: "Post"
     fail: "Request is not created"
+    destroyed: "Request is destroyed"
+    not_destroyed: "Request is not destroyed"
+    name: "Name"
+    action: "Action"
+    content: "Content"
+    delete: "Delete"
   picture:
     validate: "should be less than 5MB"
   comment:
