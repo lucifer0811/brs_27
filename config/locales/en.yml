@@ -25,7 +25,7 @@ en:
     author: "Author"
   book:
     update: "Update Information Book"
-    new: "New Book"
+    new: "New"
     create: "Create new book"
     cover: "Image"
     book_page_title: "All Books"
@@ -91,6 +91,10 @@ en:
     fail: "No update"
     no_review: "Review not found"
     check: "You sure?"
+    category_delete: "Delete category"
+    fail_delete: "Category not deleted"
+    book_exsit: "This category contains one or more book(s),
+      deletion not allowed"
   page:
     recruit: "http://recruit.framgia.vn/"
     update: "Profile Update"

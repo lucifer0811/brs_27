@@ -1,5 +1,9 @@
 class Book < ActiveRecord::Base
   belongs_to :category
+
+  validates :title,  presence: true
+  validates :author,  presence: true
+  validates_numericality_of :number_of_page, greater_than: 0
   has_many :reviews, dependent: :destroy
 
   mount_uploader :picture, PictureUploader

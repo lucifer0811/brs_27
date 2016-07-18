@@ -1,4 +1,5 @@
 <h1><%= t "book.book_page_title" %></h1>
-  <%= link_to t("book.new"), new_admin_book_path, class: "btn btn-info" %>
+  <%= link_to t("book.new"), new_admin_book_path,
+    class: "btn btn-primary glyphicon glyphicon-plus" %>
   <%= render "book" %>
 <%= will_paginate %>
