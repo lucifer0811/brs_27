@@ -99,6 +99,7 @@ en:
     submit: "Save changes"
     imformation: "Imformation"
     delete_success: "user is deleted"
+    not_found: "User not found"
   categories:
     name: "Name"
     description: "Description"
