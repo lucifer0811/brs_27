@@ -7,15 +7,8 @@
     <%= @book.rate %>  </br>
   </div>
 </div>
+<%= render "reviews/index"%>
+<div>
+  <%= link_to t("review.add"), new_book_review_path(@book) %>
+</div>
 
-<%= render "reviews/index" %>
-
-<% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="review_form">
-        <%= render "reviews/review_form" %>
-      </section>
-    </aside>
-  </div>
-<% end %>
