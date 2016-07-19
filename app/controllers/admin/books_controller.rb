@@ -5,6 +5,7 @@ class Admin::BooksController < ApplicationController
   before_action :check_admin, only: [:edit, :destroy]
 
   def show
+    @reviews = @book.reviews
   end
 
   def new

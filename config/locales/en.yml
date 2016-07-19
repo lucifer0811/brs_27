@@ -128,6 +128,10 @@ en:
     delete: "Delete"
     success: "deleted review"
     fail: "review delete fail"
+    edit: "Edit"
+    update: "Update review"
+    updated: "Update success"
+    no_update: "Update fail"
   request:
     created: "Request was created"
     suggest: "Compose new request..."

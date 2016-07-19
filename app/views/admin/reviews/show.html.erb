@@ -1,0 +1,30 @@
+<h1><%= t "review.review_page_title" %></h1>
+<div class="container">
+  <div class="container-fluid">
+    <b><%= @review.title %></b></br>
+    <%= @review.user.name %> </br>
+    <%= @review.book.title %> </br>
+    <%= @review.created_at.to_s %> </br>
+    <%= @review.content %>
+  </div>
+  <% if logged_in? %>
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="comment_form">
+          <%= render "comments/comment_form" %>
+        </section>
+      </aside>
+    </div>
+  <% end %>
+  <div class="col-md-8">
+      <% if @review.comments.any? %>
+        <div id = "comment-count">
+          <%= render "comments/comment_header" %>
+        </div>
+          <ol class="comments">
+            <%= render @comments %>
+          </ol>
+        <%= will_paginate @comments %>
+      <% end %>
+  </div>
+</div>

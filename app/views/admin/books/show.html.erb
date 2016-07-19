@@ -19,8 +19,17 @@
         class: "glyphicon glyphicon-trash text-danger", method: :delete,
         data: {confirm: t("flash.check")} %>
     </div>
+    <div class="row">
+      <%= link_to t("review.add"), new_admin_book_review_path(@book) %>
+    </div>
   </div>
   <div class="col-md-6">
-      <%= t "review.review_index_name" %>
+    <div class="row">
+      <%= t "book.description" %></br><%= @book.description %><br>
+      <h1><%= t "review.review_index_name" %><h1>
+    </div>
+    <div class="row">
+      <%= render @reviews %>
+    </div>
   </div>
 </div>

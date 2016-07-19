@@ -1,7 +1,7 @@
-class ReviewsController < ApplicationController
+class Admin::ReviewsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :update]
   before_action :find_book
-  before_action :find_review, only: [:update, :destroy, :edit]
+  before_action :find_review, only: [:update, :destroy, :edit, :show]
 
   def index
   end
@@ -11,9 +11,8 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find_by id: params[:id]
-      flash[:danger] = t "flash.no_review" unless @review
-      @comments = @review.comments.most_recent.paginate page: params[:page]
+    flash[:danger] = t "flash.no_review" unless @review
+    @comments = @review.comments.most_recent.paginate page: params[:page]
     if logged_in?
       @comment = current_user.comments.build
     end
@@ -26,7 +25,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     if @review.save
       flash[:success] = t "flash.review_create_success"
-      redirect_to book_path @book
+      redirect_to admin_book_path(@book)
     else
       flash[:danger] = t "flash.review_create_fail"
       render :new
@@ -39,7 +38,7 @@ class ReviewsController < ApplicationController
   def update
     if @review.update_attributes review_params
       flash[:success] = t "review.updated"
-      redirect_to book_path(@book)
+      redirect_to admin_book_path(@book)
     else
       flash[:danger] = t "review.no_update"
       render :edit
@@ -49,7 +48,7 @@ class ReviewsController < ApplicationController
   def destroy
     if @review.destroy
       flash[:success] = t "review.success"
-      redirect_to book_path(@book)
+      redirect_to admin_book_path(@book)
     else
       flash[:danger] = t "review.fail"
     end

@@ -1,0 +1,6 @@
+<%= form_for [:admin, @book, @book.reviews.build] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: t("placeholder.title") %>
+  <%= f.text_area :content, placeholder: t("placeholder.review") %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

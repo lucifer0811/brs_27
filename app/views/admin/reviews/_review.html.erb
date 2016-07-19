@@ -1,0 +1,17 @@
+<div class="review-admin">
+  <span class="review">
+    <h4><%= link_to review.user.name, review.user %></h4>
+    <p><%= link_to review.title, admin_book_review_path(@book, review)%></p>
+    <%= review.content %><br>
+    <% if current_user? review.user %>
+      <%= link_to edit_admin_book_review_path(review.book, review) do %>
+      <span class= "glyphicon glyphicon-pencil" ></span>
+      <% end %>
+    <% end %>
+    <%= link_to admin_book_review_path(review.book, review),
+      method: :delete, data: {confirm: t("flash.check")} do %>
+      <span class="glyphicon glyphicon-trash text-danger"></span>
+    <% end %>
+    <%= time_ago_in_words review.created_at  %>
+  </span>
+</div>
