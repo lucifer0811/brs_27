@@ -24,7 +24,7 @@ en:
     title: "Title"
     author: "Author"
   book:
-    update: "Update Imformation Book"
+    update: "Update Information Book"
     new: "New Book"
     create: "Create new book"
     cover: "Image"
@@ -87,7 +87,7 @@ en:
     review_nil: "Review not found"
     review_create_success: "Added new review"
     review_create_fail: "Fail to create review"
-    success: "Imformation update"
+    success: "Information update"
     fail: "No update"
     no_review: "Review not found"
     check: "You sure?"
@@ -97,9 +97,10 @@ en:
     action: "Please log in"
   users:
     submit: "Save changes"
-    imformation: "Imformation"
+    imformation: "Information"
     delete_success: "user is deleted"
     not_found: "User not found"
+    not_owner: "Not authorized"
   categories:
     name: "Name"
     description: "Description"
@@ -137,6 +138,7 @@ en:
   picture:
     validate: "should be less than 5MB"
   comment:
+    delete: "Delete"
     posted: "Posted"
     ago: "ago"
     title: "Comments"
@@ -147,6 +149,7 @@ en:
     placeholder: "Add new comment"
     delete_failed: "Failed to delete comment"
     delete_success: "Comment deleted"
+    not_found: "Comment not found"
   placeholder:
     title: "Title......"
     review: "Compose new review..."

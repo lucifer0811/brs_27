@@ -1,8 +1,15 @@
 <li id="comment-<%= comment.id %>">
-  <span class="user"><%= link_to comment.user.name, comment.user %></span>
+  <span class="user">
+    <%= link_to comment.user.name, comment.user %>
+  </span>
+  <% if current_user?(comment.user) || current_user.is_admin? %>
+    <%= link_to t("comment.delete"), {controller: :comments, action: "destroy",
+      id: comment.id}, method: :delete %>
+  <% end %>
   <span class="content"><%= comment.content %></span>
+
   <span class="timestamp">
-    <%= t "comment.posted" %>  <%= time_ago_in_words(comment.created_at) %>
+    <%= t "comment.posted" %>  <%= time_ago_in_words comment.created_at %>
     <%= t "comment.ago" %>
   </span>
 </li>

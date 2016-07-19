@@ -33,20 +33,27 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find_by id: params[:comment_id]
+    @comment = Comment.find_by id: params[:id]
     unless @comment.nil?
-      @comment.destroy
-      flash[:success] = t "comment.delete_success"
-      redirect_to request.referrer || root_url
+      if correct_user? @comment.user || current_user.is_admin?
+        if @comment.destroy
+          flash[:success] = t "comment.delete_success"
+        else
+          flash[:danger] = t "comment.delete_failed"
+        end
+      else
+        flash[:danger] = t "user.not_owner"
+      end
     else
-      flash[:danger] = t "comment.delete_failed"
+      flash[:danger] = t "comment.not_found"
     end
+    redirect_to :back
   end
+
   private
-  def correct_user
-      @comment = current_user.comments.find_by(id: params[:id])
-      redirect_to :back if @comment.nil?
-    end
+  def correct_user? user
+    current_user == user
+  end
   def comment_params
     params.require(:comment).permit :user_id, :review_id, :content
   end

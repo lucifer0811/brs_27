@@ -1,9 +1,10 @@
 <span class="review">
   <h4><%= link_to review.user.name, review.user %></h4>
+  <h4><%= link_to review.title, book_review_path @book, review  %></h4>
   <%= review.content %><br>
-  <% if current_user?(review.user) %>
-      <%= link_to t("review.delete"), book_review_path(review.book, review),
-        method: :delete, data: {confirm: t("flash.check")} %>
+  <% if current_user? review.user || current_user.is_admin? %>
+    <%= link_to t("review.delete"), book_review_path(review.book, review),
+      method: :delete, data: {confirm: t("flash.check")} %>
   <% end %>
-  <%= time_ago_in_words(review.created_at) %>
+  <%= time_ago_in_words review.created_at  %>
 </span>
