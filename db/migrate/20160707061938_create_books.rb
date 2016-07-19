@@ -9,6 +9,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string  :rate
       t.integer :number_of_rate
       t.string :picture
+      t.string :description
 
       t.timestamps null: false
     end

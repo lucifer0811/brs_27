@@ -1,14 +1,29 @@
-<div class="container">
-  <div class="container-fluid">
-    <b><%= @book.title %></b></br>
-    <%= @book.author %> </br>
-    <%= @book.publish_date.to_date %> </br>
-    <%= @book.number_of_page %>  </br>
-    <%= @book.rate %>  </br>
+<div class="row">
+  <div class="col-md-6">
+    <div class="row">
+      <%= image_tag(@book.picture.url, size: Settings.users.size,
+        class: "img-thumbnail") if @book.picture? %>
+    </div>
+    <div class="row">
+      <b><%= @book.title %></b></br>
+      <%= t "book.book_index_author" %> : <%= @book.author %></br>
+      <%= t "book.book_index_publish_date" %> :
+        <%= @book.publish_date.to_date %></br>
+      <%= t "book.book_index_number_of_page"%> : <%= @book.number_of_page %></br>
+      <%= @book.rate %> </br>
+    </div>
+    <div class="row">
+      <%= link_to t("review.add"), new_book_review_path(@book) %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="row">
+      <%= t "book.description" %></br><%= @book.description %><br>
+      <h1><%= t "review.review_index_name" %><h1>
+    </div>
+    <div class="row">
+      <%= render @reviews %>
+    </div>
   </div>
 </div>
-<%= render "reviews/index"%>
-<div>
-  <%= link_to t("review.add"), new_book_review_path(@book) %>
-</div>
-

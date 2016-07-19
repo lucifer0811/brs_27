@@ -28,11 +28,13 @@ end
   date = Faker::Date.between(10.years.ago, 5.years.ago).to_date
   page_number = Faker::Number.between 100, 1000
   category = Faker::Number.between 1, 5
+  description = Faker::Lorem.paragraphs.join(' ')
   Book.create!(title: name,
     author: author_name,
     publish_date: date,
     number_of_page: page_number,
-    category_id: category
+    category_id: category,
+    description: description
   )
 end
 

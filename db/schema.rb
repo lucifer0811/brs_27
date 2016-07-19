@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160714030022) do
     t.string   "rate"
     t.integer  "number_of_rate"
     t.string   "picture"
+    t.string   "description"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
