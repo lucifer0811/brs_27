@@ -1,0 +1,9 @@
+<span class="review">
+  <h4><%= link_to review.user.name, review.user %></h4>
+  <%= review.content %><br>
+  <% if current_user?(review.user) %>
+      <%= link_to t("review.delete"), book_review_path(review.book, review),
+        method: :delete, data: {confirm: t("flash.check")} %>
+  <% end %>
+  <%= time_ago_in_words(review.created_at) %>
+</span>

@@ -31,7 +31,7 @@ class Admin::CategoriesController < ApplicationController
       redirect_to admin_categories_path
     else
       flash[:danger] = t "categories.fail_create"
-      redirect_to :edit
+      render :edit
     end
   end
 

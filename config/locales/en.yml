@@ -37,6 +37,7 @@ en:
     book_create_success: "Added new book"
     book_index_category: "Category"
     delete: "Delete"
+    description: "Description"
     edit: "Edit"
     book_delete: "Book Delete"
     fail: "Failed to delete Book"
@@ -118,6 +119,9 @@ en:
     review_index_author: "By"
     review_index_publish_date: "Time"
     add: "Add review"
+    delete: "Delete"
+    success: "deleted review"
+    fail: "review delete fail"
   request:
     created: "Request was created"
     suggest: "Compose new request..."
