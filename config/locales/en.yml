@@ -135,6 +135,13 @@ en:
     action: "Action"
     content: "Content"
     delete: "Delete"
+    not_found: "Request not found"
+    edit: "Edit"
+    editted: "Request is editted"
+    not_editted: "Request is not editted"
+    approved: "Approved"
+    not_approved: "Pending"
+    status: "Status"
   picture:
     validate: "should be less than 5MB"
   comment:

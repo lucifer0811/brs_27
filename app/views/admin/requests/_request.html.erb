@@ -5,6 +5,7 @@
       <th><%= t "request.name" %></th>
       <th><%= t "request.content" %></th>
       <th><%= t "request.action" %></th>
+      <th><%= t "request.status" %></th>
     </tr>
   </thead>
   <tbody>
@@ -13,8 +14,15 @@
         <td><%= index + 1 %></td>
         <td><%= link_to request.user.name,request.user %></td>
         <td><%= request.book_name %></td>
-        <td><%= link_to t("request.delete"), [:admin,request], method: :delete,
-           data:{confirm: t("flash.check")} %></td>
+        <td>
+          <%= link_to t("request.delete"), [:admin,request], method: :delete,
+            data:{confirm: t("flash.check")} %>
+        </td>
+        <td>
+          <%= link_to (t request.is_approved ? "request.approved" :
+            "request.not_approved"), admin_request_path(request),
+             method: :patch %>
+        </td>
       </tr>
     <% end %>
   </tbody>

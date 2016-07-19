@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :comments, only: [:create, :destroy]
   resources :categories, only: :index
   resources :books, only: [:index, :show]
-  resources :requests, only: [:add, :edit]
+  resources :requests, only: [:add, :update]
   resources :books do
     resources :reviews
   end
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy]
     resources :categories
     resources :books
-    resources :requests, only:[:show, :destroy, :edit]
+    resources :requests, only:[:show, :destroy, :update]
   end
   resources :requests, only: [:create, :destroy, :show]
   # The priority is based upon order of creation: first created -> highest priority.
