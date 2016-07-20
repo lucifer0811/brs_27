@@ -1,5 +1,6 @@
 class Admin::CategoriesController < ApplicationController
-  before_action :load_category, only: [:show, :edit, :update]
+  before_action :is_admin, only: [:edit, :destroy]
+  before_action :load_category, except: :index
   before_action :check_category, only: :show
 
   def show
@@ -21,7 +22,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.order(created_at: :asc).paginate page: params[:page],
+    @categories = Category.order(created_at: :DESC).paginate page: params[:page],
       per_page: Settings.users.per_page
   end
 
@@ -38,6 +39,19 @@ class Admin::CategoriesController < ApplicationController
   def edit
   end
 
+  def destroy
+    unless @category.books.any?
+      if @category.destroy
+        flash[:success] = t "flash.category_delete"
+      else
+        flash[:danger] = t "flash.fail_delete"
+      end
+    else
+        flash[:danger] = t "flash.book_exsit"
+    end
+    redirect_to :back
+  end
+
   private
   def category_params
     params.require(:category).permit :category_name, :descriptions
@@ -52,5 +66,9 @@ class Admin::CategoriesController < ApplicationController
       flash[:danger] = t "flash.no_object"
       redirect_to admin_categories_path
     end
+  end
+
+  def is_admin
+    redirect_to login_path unless current_user.is_admin?
   end
 end

@@ -12,27 +12,28 @@
           <%= f.text_field :author, class: "form-control" %>
         </span>
 
-        <span class="form-group">
+        <p class="form-group">
           <%= f.label :publish_date %>
           <%= f.date_select :publish_date, order: [:month, :day, :year] %>
-        </span>
+        </p>
 
         <span class="form-group">
           <%= f.label :number_of_page %>
-          <%= f.number_field :number_of_page, class: "form-control" %>
+          <%= f.number_field :number_of_page, min: 1, value: 1,
+            class: "form-control" %>
         </span>
 
         <span class="form-group">
           <%= f.label :category_id %>
-          <%= f.collection_select :category_id, @categories, :id, :category_name,
-            class: "form-control" %>
+          <%= f.collection_select :category_id, Category.all, :id,
+            :category_name, class: "form-control" %>
         </span>
 
         <span class="picture">
           <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
         </span>
 
-        <%= f.submit t "users.submit", class: "btn btn-primary" %>
+        <%= f.submit t("users.submit"), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

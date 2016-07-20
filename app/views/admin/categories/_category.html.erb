@@ -12,11 +12,16 @@
         <td><%= index + 1 %></td>
         <td><%= link_to category.category_name,
               admin_category_path(category) %></td>
-        <td><%= link_to t("categories.edit"),
-              edit_admin_category_path(category),
-              class: "glyphicon glyphicon-pencil" %></td>
+        <td>
+          <%= link_to edit_admin_category_path(category) do %>
+            <span class= "glyphicon glyphicon-pencil"></span>
+          <% end %>
+          <%= link_to  [:admin, category], method: :delete,
+            data: {confirm: t("flash.check")} do %>
+            <span class= "glyphicon glyphicon-trash text-danger"></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
