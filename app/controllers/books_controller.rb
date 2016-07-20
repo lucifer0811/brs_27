@@ -5,6 +5,12 @@ class BooksController < ApplicationController
   def show
     @reviews = Review.all.order("created_at DESC").where(book_id: params[:id])
       .paginate(page: params[:page], per_page: Settings.users.per_page)
+    @book_status = BookStatus.find_by book_id: @book.id, user_id: current_user.id
+    if @book_status.nil?
+      @book_status = current_user.book_statuses.new
+      @book_status.book = @book
+      @book_status.save
+    end
   end
 
   def index

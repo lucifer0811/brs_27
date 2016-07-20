@@ -1,0 +1,7 @@
+<%= form_for @book_status, html: {class: "favorite_button"},
+  url: {controller: :book_statuses, action: :update}, remote: true do |f| %>
+  <div><%= f.hidden_field :user_id, value: current_user.id %></div>
+  <div><%= f.hidden_field :book_id, value: @book.id %></div>
+  <div><%= f.hidden_field :is_favorite, value: true %></div>
+  <%= f.submit t("book_status.button_favorite"), class: "btn btn-primary" %>
+<% end %>

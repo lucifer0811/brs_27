@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
 
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :book_statuses, dependent: :destroy
   # Follows a user.
   def follow other_user
     active_relationships.create followed_id: other_user.id
