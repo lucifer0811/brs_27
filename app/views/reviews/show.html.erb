@@ -18,15 +18,12 @@
   <% end %>
   <div class="col-md-8">
       <% if @review.comments.any? %>
-
         <div id = "comment-count">
           <%= render "comments/comment_header" %>
         </div>
-
           <ol class="comments">
             <%= render @comments %>
           </ol>
-
         <%= will_paginate @comments %>
       <% end %>
   </div>
