@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
 
   def create
-    @request= current_user.requests.build request_params
+    @request = current_user.requests.build request_params
     if @request.save
       flash[:success] = t "request.created"
       redirect_to requests_path
@@ -16,9 +16,9 @@ class RequestsController < ApplicationController
   end
 
   def show
-    @user= current_user
-    @requests=@user.requests.order(updated_at: :desc).paginate(page: params[:page])
-    @new_request=current_user.requests.build if logged_in?
+    @user = current_user
+    @requests = @user.requests.order(updated_at: :desc).paginate page: params[:page]
+    @new_request = current_user.requests.build if logged_in?
   end
 
   private

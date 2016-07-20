@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20160714030022) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.boolean  "is_approved"
+    t.boolean  "is_approved", default: false
     t.string   "book_name"
     t.integer  "user_id"
     t.datetime "created_at"
