@@ -1,10 +1,15 @@
 <span class="review">
   <h4><%= link_to review.user.name, review.user %></h4>
-  <h4><%= link_to review.title, book_review_path @book, review  %></h4>
+  <p><%= link_to review.title, book_review_path(@book, review)%></p>
   <%= review.content %><br>
-  <% if current_user? review.user || current_user.is_admin? %>
-    <%= link_to t("review.delete"), book_review_path(review.book, review),
-      method: :delete, data: {confirm: t("flash.check")} %>
+  <% if current_user? review.user %>
+    <%= link_to edit_book_review_path(review.book, review) do %>
+      <span class= "glyphicon glyphicon-pencil" ></span>
+    <% end %>
+    <%= link_to book_review_path(review.book, review),
+      method: :delete, data: {confirm: t("flash.check")} do %>
+      <span class="glyphicon glyphicon-trash text-danger"></span>
+    <% end %>
   <% end %>
   <%= time_ago_in_words review.created_at  %>
 </span>

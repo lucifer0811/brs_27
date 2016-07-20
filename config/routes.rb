@@ -32,7 +32,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :destroy]
     resources :categories
-    resources :books
+    resources :books do
+      resources :reviews
+    end
     resources :requests, only:[:show, :destroy, :update]
   end
   resources :requests, only: [:create, :destroy, :show]
