@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   get "/requests", to: "requests#show"
   get "/admin/requests", to: "admin/requests#show"
 
+  resources :reviews do
+    resources :comments
+  end
 
-  resources :comments, only: [:create, :destroy]
   resources :categories, only: :index
   resources :books, only: [:index, :show]
   resources :requests, only: [:add, :update]
@@ -34,6 +36,9 @@ Rails.application.routes.draw do
     resources :categories
     resources :books do
       resources :reviews
+    end
+    resources :reviews do
+      resources :comments
     end
     resources :requests, only:[:show, :destroy, :update]
   end

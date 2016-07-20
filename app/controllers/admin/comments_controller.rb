@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Admin::CommentsController < ApplicationController
   before_action :logged_in_user
   before_action :load_review, :load_comment
 
@@ -64,7 +64,7 @@ class CommentsController < ApplicationController
     @review = Review.find_by id: params[:review_id]
     unless @review
       flash[:danger] = t "flash.no_object"
-      redirect_to book_review_path(@review)
+      redirect_to admin_book_review_path(@review)
     end
   end
   def correct_user? user

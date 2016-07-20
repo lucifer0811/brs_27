@@ -41,6 +41,10 @@ en:
     edit: "Edit"
     book_delete: "Book Delete"
     fail: "Failed to delete Book"
+  comment:
+    update: "Update Comment"
+    success: "Updated comment"
+    fail_update: "Comment not update"
   hello: "Hello world"
   static_pages:
     home_title: "WELCOME TO BOOK REWIEWING SYSTEM"
