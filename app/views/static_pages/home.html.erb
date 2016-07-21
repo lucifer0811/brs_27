@@ -5,9 +5,4 @@
     <%= link_to t("signup.signup_button"),
       signup_path, class: "btn btn-lg btn-primary" %>
 </div>
-<div class="row">
-    <h1><%= t "model.activity.recent_action" %></h1>
-    <%= render partial: "activities/activities",
-      locals: {activities: @activities} %>
-    <%= will_paginate @activities %>
-</div>
+

@@ -28,9 +28,11 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
+    resources :likes, only: [:index, :create, :destroy]
   end
   resources :user_relationships, only: [:create, :destroy]
   resources :book_statuses
+  resources :activities
 
   namespace :admin do
     resources :users, only: [:index, :destroy]

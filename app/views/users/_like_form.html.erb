@@ -1,0 +1,10 @@
+<% unless current_user? @user %>
+  <span id="like_form_<%= activity.id %>">
+    <% if current_user.liked? activity %>
+      <%= render "unlike", activity: activity,
+        like: current_user.find_like(activity) %>
+    <% else %>
+      <%= render "like", activity: activity %>
+    <% end %>
+  </span>
+<% end %>

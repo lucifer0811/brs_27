@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activity:
+    list: "List Activity"
   button:
     title: "Title"
     author: "Author"
@@ -121,8 +123,9 @@ en:
     delete_success: "user is deleted"
     not_found: "User not found"
     not_owner: "Not authorized"
-    like: "like"
-    unlike: "unlike"
+    like: "Like"
+    unlike: "Unlike"
+    activity: "Activity"
   categories:
     name: "Name"
     description: "Description"
@@ -195,6 +198,7 @@ en:
       deleted: "(deleted)"
       emptyurl: "#"
       ago: "Ago"
+      no_activity: "No Activity"
       message:
         follow: " followed "
         read: "read"
