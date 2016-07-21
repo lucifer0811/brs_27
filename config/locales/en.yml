@@ -169,3 +169,16 @@ en:
     title: "Title......"
     review: "Compose new review..."
     search: "search by title or author...."
+  model:
+    activity:
+      recent_action: "Recent actions"
+      banned: "(banned)"
+      deleted: "(deleted)"
+      emptyurl: "#"
+      message:
+        follow: " followed "
+        read: "read"
+        reading: "is reading"
+        favorite: "marked a favorite book on"
+        review: " wrote a review on "
+        comment: "wrote a comment on"

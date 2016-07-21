@@ -1,9 +1,13 @@
-
 <div class="center jumbotron">
   <h1><%= t "static_pages.home_title" %></h1>
   <h2><%= t "title.text" %>
     <a href="http://recruit.framgia.vn/"></a><%= t "title.title_name" %></h2>
-    <%= link_to t("signup.signup_button"), signup_path, class: "btn btn-lg btn-primary" %>
-    <%= link_to image_tag("fram2.jpg", alt: t("static_pages.framgia_logo")),
-      "http://recruit.framgia.vn/" %>
+    <%= link_to t("signup.signup_button"),
+      signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+<div class="row">
+    <h1><%= t "model.activity.recent_action" %></h1>
+    <%= render partial: "activities/activities",
+      locals: {activities: @activities} %>
+    <%= will_paginate @activities %>
 </div>
