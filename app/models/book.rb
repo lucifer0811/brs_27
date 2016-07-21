@@ -12,6 +12,14 @@ class Book < ActiveRecord::Base
   scope :search, ->search {where("title LIKE ? or author LIKE ?",
    "%#{search.squish}%", "%#{search.squish}%")}
 
+  def average_rating
+    if self.reviews.size > 0
+      self.reviews.average(:rating).round(1)
+    else
+      t "book.undefined"
+    end
+  end
+
   def picture_size
     if picture.size > 5.megabytes
       errors.add(:picture, t("picture.validate"))

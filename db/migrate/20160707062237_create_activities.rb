@@ -10,4 +10,4 @@ class CreateActivities < ActiveRecord::Migration
     end
   end
 end
-d
+

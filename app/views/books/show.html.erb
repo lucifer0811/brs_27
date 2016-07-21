@@ -9,8 +9,8 @@
       <%= t "book.book_index_author" %> : <%= @book.author %></br>
       <%= t "book.book_index_publish_date" %> :
         <%= @book.publish_date.to_date %></br>
+      <%= t "book.rate" %> : <%= @book.average_rating %></br>
       <%= t "book.book_index_number_of_page"%> : <%= @book.number_of_page %></br>
-      <%= @book.rate %> </br>
     </div>
     <div class="row">
       <%= link_to t("review.add"), new_book_review_path(@book) %>

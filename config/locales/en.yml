@@ -41,6 +41,8 @@ en:
     edit: "Edit"
     book_delete: "Book Delete"
     fail: "Failed to delete Book"
+    undefined: "undefined"
+    rate: "Rate"
   comment:
     update: "Update Comment"
     success: "Updated comment"
@@ -136,6 +138,7 @@ en:
     update: "Update review"
     updated: "Update success"
     no_update: "Update fail"
+    rating: "Rating"
   request:
     created: "Request was created"
     suggest: "Compose new request..."
