@@ -7,7 +7,7 @@ class Activity < ActiveRecord::Base
   enum target_type: [:user_target, :book_target, :review_target]
 
   belongs_to :user
-  has_many :like_activities, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   def target
     if user_target?
