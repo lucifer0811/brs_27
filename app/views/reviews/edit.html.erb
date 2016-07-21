@@ -6,6 +6,9 @@
         <%= f.label :title %>
         <%= f.text_field :title, class: "form-control" %>
 
+        <%= f.label :rating %>
+        <%= f.number_field :rating, in: 1..6, class: "form-control" %>
+
         <%= f.label :content %>
         <%= f.text_field :content, class: "form-control" %>
 

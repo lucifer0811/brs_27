@@ -1,6 +1,7 @@
 <div class="review-admin">
   <span class="review">
     <h4><%= link_to review.user.name, review.user %></h4>
+    <%= t "review.rating" %>: <%= review.rating %>
     <p><%= link_to review.title, admin_book_review_path(@book, review)%></p>
     <%= review.content %><br>
     <% if current_user? review.user %>

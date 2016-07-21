@@ -1,6 +1,14 @@
-<%= form_for [@book, @book.reviews.build] do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title, placeholder: t("placeholder.title") %>
-  <%= f.text_area :content, placeholder: t("placeholder.review") %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [@book, @book.reviews.build] do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: t("placeholder.title"),
+        class: "form-control" %>
+      <%= f.label :rating %>
+      <%= f.number_field :rating, in: 1...6, class: "form-control" %>
+      <%= f.text_area :content, placeholder: t("placeholder.review"),
+        class: "form-control" %>
+      <%= f.submit t("users.submit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
