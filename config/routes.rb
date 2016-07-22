@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     end
   end
   resources :user_relationships, only: [:create, :destroy]
+  resources :book_statuses
 
   namespace :admin do
     resources :users, only: [:index, :destroy]

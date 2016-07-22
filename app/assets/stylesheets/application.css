@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+form.book_status_form {
+  width: 20%;
+}
+form.favorite_button{
+  width: 20%;
+}

@@ -3,8 +3,8 @@ class CreateBookStatuses < ActiveRecord::Migration
     create_table :book_statuses do |t|
       t.integer :user_id
       t.integer :book_id
-      t.integer :reading_status
-      t.boolean :is_favorite
+      t.integer :reading_status, default: 0
+      t.boolean :is_favorite, default: false
 
       t.timestamps null: false
     end

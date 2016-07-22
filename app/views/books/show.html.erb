@@ -11,6 +11,8 @@
         <%= @book.publish_date.to_date %></br>
       <%= t "book.rate" %> : <%= @book.average_rating %></br>
       <%= t "book.book_index_number_of_page"%> : <%= @book.number_of_page %></br>
+      <%= render "favorite_form" if logged_in? %> </br>
+      <%= render "read_status_form" if logged_in? %>
     </div>
     <div class="row">
       <%= link_to t("review.add"), new_book_review_path(@book) %>

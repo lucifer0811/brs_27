@@ -23,6 +23,14 @@ en:
   button:
     title: "Title"
     author: "Author"
+  book_status:
+    button_favorite: "Favorite"
+    button_unfavorite: "Unfavorite"
+    update_success: "Status Updated"
+    update_failed: "Status Update Failed"
+    create_success: "Status Record Created"
+    create_failed: "Status Record Not Created !!!"
+    not_found: "Status Record not found !!!"
   book:
     update: "Update Information Book"
     new: "New"

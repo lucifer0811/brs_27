@@ -5,6 +5,7 @@ class Book < ActiveRecord::Base
   validates :author,  presence: true
   validates_numericality_of :number_of_page, greater_than: 0
   has_many :reviews, dependent: :destroy
+  has_many :book_statuses, dependent: :destroy
 
   mount_uploader :picture, PictureUploader
   validate :picture_size
@@ -15,8 +16,6 @@ class Book < ActiveRecord::Base
   def average_rating
     if self.reviews.size > 0
       self.reviews.average(:rating).round(1)
-    else
-      t "book.undefined"
     end
   end
 
