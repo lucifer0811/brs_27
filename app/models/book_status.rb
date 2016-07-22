@@ -5,6 +5,9 @@ class BookStatus < ActiveRecord::Base
   enum reading_status: [ :unread, :read, :reading ]
   after_save :create_status_activty
 
+  scope :correct_user, -> user_id {where user_id: user_id}
+  scope :filter_favorite, -> {where is_favorite: true}
+
   private
   def create_status_activty
     create_activity user_id, book_id, Activity.target_types[:book_target],

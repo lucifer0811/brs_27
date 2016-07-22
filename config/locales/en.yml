@@ -52,6 +52,7 @@ en:
     undefined: "undefined"
     rate: "Rate"
     search: "Search"
+    favorite: "Favorite books"
   comment:
     update: "Update Comment"
     success: "Updated comment"
