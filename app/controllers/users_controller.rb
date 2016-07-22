@@ -4,6 +4,11 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def show
+    @book_statuses=BookStatus.correct_user(params[:id]).filter_favorite
+    @books=[]
+    @book_statuses.each do |book_status|
+      @books.push(Book.find_by id: book_status.book_id)
+    end
   end
 
   def new

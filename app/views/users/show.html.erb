@@ -15,4 +15,6 @@
       <%= render "follow_form" if logged_in? %>
     </div>
   </aside>
+  <h1><%= t "book.favorite" %></h1>
+  <%= render partial: "books/book_index", locals: {books: @books} %>
 </div>
