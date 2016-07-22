@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :show]
   before_action :find_user, except: [:create, :new, :index]
   before_action :correct_user, only: [:edit, :update]
+  before_action :load_activity, only: :show
 
   def show
     @book_statuses=BookStatus.correct_user(params[:id]).filter_favorite
@@ -9,6 +10,7 @@ class UsersController < ApplicationController
     @book_statuses.each do |book_status|
       @books.push(Book.find_by id: book_status.book_id)
     end
+    @activities = @user.activities.order("created_at DESC")
   end
 
   def new
@@ -73,5 +75,9 @@ class UsersController < ApplicationController
       flash[:danger] = t "user.not_found"
       redirect_to :back
     end
+  end
+
+  def load_activity
+    @activity = Activity.find_by id: params[:id]
   end
 end

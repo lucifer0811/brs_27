@@ -11,10 +11,16 @@
         <%= render "shared/stats" %>
       </section>
     </div>
-    <div>
+    <div class="col-md-8">
       <%= render "follow_form" if logged_in? %>
     </div>
   </aside>
-  <h1><%= t "book.favorite" %></h1>
+  <div class="col-md-8">
+    <h3><%= t "users.activity" %></h3>
+    <%= render @activities %>
+  </div>
+</div>
+<div class="row">
+  <h3><%= t "book.favorite" %></h3>
   <%= render partial: "books/book_index", locals: {books: @books} %>
 </div>

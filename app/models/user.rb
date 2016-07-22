@@ -21,10 +21,11 @@ class User < ActiveRecord::Base
 
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
+
   has_many :book_statuses, dependent: :destroy
 
-  has_many :likes, dependent: :destroy
   has_many :activities, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   # Follows a user.
   def follow other_user
@@ -39,5 +40,13 @@ class User < ActiveRecord::Base
   # Returns true if the current user is following the other user.
   def following? other_user
     following.include? other_user
+  end
+
+  def liked? activity
+    likes.find_by(activity_id: activity.id).present?
+  end
+
+  def find_like activity
+    self.likes.where(activity_id: activity.id)
   end
 end

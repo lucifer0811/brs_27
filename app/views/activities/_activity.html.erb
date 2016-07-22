@@ -1,0 +1,9 @@
+<div>
+  <ul>
+    <%= link_to activity.owner.name, activity.owner %>
+    <%= activity.message %>
+    <%= link_to activity.target_name, activity.target_path %>
+    <%= time_ago_in_words(activity.created_at) %> ago
+    <%= render "users/like_form", activity: activity %>
+  </ul>
+</div>
