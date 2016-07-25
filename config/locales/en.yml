@@ -96,6 +96,8 @@ en:
     request: "Request"
     manager: "Manager"
     all_requests: "All requests"
+    action: "Action"
+    avatar: "Avatar"
   flash:
     danger: "Invalid email/password combination"
     message: "The form contains"
@@ -131,7 +133,7 @@ en:
     description: "Description"
     number: "Number Book"
     create: "Category Create"
-    add: "New Category"
+    add: "New"
     fail_create: "Failed to create new category"
     update: "Update Category"
     action: "Action"

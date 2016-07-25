@@ -1,7 +1,8 @@
 <h1><%= t "title.all_categories" %></h1>
-<%= link_to t("categories.add"), new_admin_category_path, class: "btn btn-info" %>
 <div>
   <%= render "categories/form_search" %>
 </div>
+<%= link_to t("categories.add"), new_admin_category_path,
+  class: "btn btn-primary glyphicon glyphicon-plus"%>
 <%= render "category" %>
 <%= will_paginate %>

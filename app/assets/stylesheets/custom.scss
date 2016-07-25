@@ -179,8 +179,8 @@ input {
 
 .stats {
   overflow: auto;
-  margin-top: 0;
-  padding: 0;
+  margin-top: 0px;
+  padding: 0px;
   a {
     float: left;
     padding: 0 10px;
@@ -300,7 +300,9 @@ span.picture {
   height: 275px;
   width: 225px;
   @include background-tile;
-  margin: 20px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  margin-left: 20px;
 }
 
 .book-info {
@@ -318,7 +320,6 @@ span.picture {
     font-size: 0.85em;
     font-style: italic;
   }
-
   .book-author {
     font-size: 1.5em;
     margin-top: 10px;
@@ -327,4 +328,17 @@ span.picture {
       font-size: 0.80em;
     }
   }
+}
+.book_view {
+  @include background-tile;
+  height: 80px;
+  width: 225px;
+  margin-left: 20px;
+  margin-top: 0px;
+  box-sizing: border-box;
+  padding-top: 2px;
+}
+
+#book_info {
+  margin-top: 30px;
 }

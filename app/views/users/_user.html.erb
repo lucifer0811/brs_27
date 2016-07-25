@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th><%= t "title.stt" %></th>
+      <th><%= t "title.avatar" %></th>
       <th><%= t "title.name" %></th>
       <th><%= t "title.email" %></th>
     </tr>
@@ -10,6 +11,7 @@
     <% @users.each_with_index do |user, index| %>
       <tr>
         <td><%= index + 1 %></td>
+        <td><%= gravatar_for user, class: "img-circle" %></td>
         <td><%= link_to user.name, user%></td>
         <td><%= user.email %></td>
       </tr>

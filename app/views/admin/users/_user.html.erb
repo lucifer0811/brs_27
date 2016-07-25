@@ -4,6 +4,7 @@
       <th><%= t "title.stt" %></th>
       <th><%= t "title.name" %></th>
       <th><%= t "title.email" %></th>
+      <th><%= t "title.action" %></th>
     </tr>
   </thead>
   <tbody>
@@ -14,9 +15,10 @@
         <td><%= user.email %></td>
         <td>
           <% if !(user.is_admin?) %>
-            <%=link_to "delete", [:admin, user],
-              class: "glyphicon glyphicon-trash text-danger", method: :delete,
-              data: {confirm: t("flash.check") } %>
+            <%=link_to [:admin, user], method: :delete,
+              data: {confirm: t("flash.check")} do %>
+              <span class= "glyphicon glyphicon-trash text-danger"></span>
+            <% end %>
           <% end %>
         </td>
       </tr>
