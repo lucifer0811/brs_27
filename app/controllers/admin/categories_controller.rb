@@ -26,7 +26,7 @@ class Admin::CategoriesController < ApplicationController
       @categories = Category.search(params[:search]).order("created_at DESC")
         .paginate page: params[:page], per_page: Settings.users.per_page
     else
-      @categories = Category.order(created_at: :asc).paginate page: params[:page],
+      @categories = Category.order(created_at: :DESC).paginate page: params[:page],
       per_page: Settings.users.per_page
     end
   end
