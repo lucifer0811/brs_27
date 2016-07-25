@@ -1,35 +1,39 @@
 <div class="row">
   <div class="col-md-6">
     <div class="row">
+      <% if @book.picture? %>
       <%= image_tag(@book.picture.url, size: Settings.users.size,
-        class: "img-thumbnail") if @book.picture? %>
+        class: "img-thumbnail") %>
+      <% else %>
+      <%= image_tag("defaultcover.jpg") %>
+    <% end %>
     </div>
     <div class="row">
-       <b><h3><%= @book.title %></h3></b></br>
+      <b><h3><%= @book.title %></h3></b></br>
       <b><%= t "book.book_index_author" %></b> : <%= @book.author %></br>
       <b><%= t "book.book_index_publish_date" %></b> :
-        <%= @book.publish_date.to_date.strftime("%d, %B, %Y") %></br>
-      <b><%= t "book.rate" %> : <%= @book.average_rating %></br>
-      <b><%= t "book.book_index_number_of_page"%></b> </b>: <%= @book.number_of_page %>
-      </br>
-      </br>
-      <%= render "favorite_form" if logged_in? %> </br>
-      <%= render "read_status_form" if logged_in? %>
+        <%= @book.publish_date.to_date.strftime("%d - %B - %Y") %></br>
+      <b><%= t "book.rate" %></b> : <%= @book.average_rating %></br>
+      <b><%= t "book.book_index_number_of_page"%></b> : <%= @book.number_of_page %></br>
     </div>
     </br>
+    <%= render "favorite_form" if logged_in? %> </br>
+    <%= render "read_status_form" if logged_in? %>
     </br>
     <div class="row">
-      <%= link_to t("review.add"), new_book_review_path(@book) %>
+      <%= link_to t("review.add"), new_admin_book_review_path(@book) %>
     </div>
   </div>
-
   <div class="col-md-6">
     <div class="row">
       <b><h1><%= t "book.description" %></h1></b></br><%= @book.description %><br>
+      </br>
       <h1><%= t "review.review_index_name" %><h1>
     </div>
+    </br>
     <div class="row">
       <%= render @reviews %>
     </div>
   </div>
 </div>
+

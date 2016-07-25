@@ -1,8 +1,12 @@
 <div class="row">
   <div class="col-md-6">
     <div class="row">
+    <% if @book.picture? %>
       <%= image_tag(@book.picture.url, size: Settings.users.size,
-        class: "img-thumbnail") if @book.picture? %>
+        class: "img-thumbnail") %>
+    <% else %>
+      <%= image_tag("defaultcover.jpg") %>
+    <% end %>
     </div>
     <div class="row">
       <b><h3><%= @book.title %></h3></b></br>
