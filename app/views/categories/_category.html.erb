@@ -10,7 +10,8 @@
     <% @categories.each_with_index do |category, index| %>
       <tr>
         <td><%= index + 1 %></td>
-        <td><%= category.category_name%></td>
+        <td class="books_in_category">
+          <%= link_to category.category_name, category_path(category) %></td>
         <td><%= category.books.size %></td>
       </tr>
     <% end %>
