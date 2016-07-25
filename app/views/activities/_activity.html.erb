@@ -3,7 +3,8 @@
     <%= link_to activity.owner.name, activity.owner %>
     <%= activity.message %>
     <%= link_to activity.target_name, activity.target_path %>
-    <%= time_ago_in_words(activity.created_at) %> ago
+    <small> <%= time_ago_in_words(activity.created_at) %> ago </small>|
+    <%= activity.likes.size %> likes
     <%= render "users/like_form", activity: activity %>
   </ul>
 </div>

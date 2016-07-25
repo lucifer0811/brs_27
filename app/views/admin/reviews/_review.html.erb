@@ -1,9 +1,13 @@
 <div class="review-admin">
   <span class="review">
-    <h4><%= link_to review.user.name, review.user %></h4>
-    <%= t "review.rating" %>: <%= review.rating %>
-    <p><%= link_to review.title, admin_book_review_path(@book, review)%></p>
-    <%= review.content %><br>
+
+    <h4><b><%= link_to review.title, admin_book_review_path(@book, review)%></b>
+    <small><%= t "review.rating" %>: <%= review.rating %></small></h4>
+
+   <h4> <small>By:</small> <%= link_to review.user.name, review.user %></h4>
+
+    <%= review.content %>
+    </br>
     <% if current_user? review.user %>
       <%= link_to edit_admin_book_review_path(review.book, review) do %>
       <span class= "glyphicon glyphicon-pencil" ></span>
@@ -13,6 +17,6 @@
       method: :delete, data: {confirm: t("flash.check")} do %>
       <span class="glyphicon glyphicon-trash text-danger"></span>
     <% end %>
-    <%= time_ago_in_words review.created_at  %>
+    <%= time_ago_in_words review.created_at  %> ago
   </span>
 </div>

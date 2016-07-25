@@ -5,13 +5,14 @@
         class: "img-thumbnail") if @book.picture? %>
     </div>
     <div class="row">
-      <b><%= @book.title %></b></br>
-      <%= t "book.book_index_author" %> : <%= @book.author %></br>
-      <%= t "book.book_index_publish_date" %> :
-        <%= @book.publish_date.to_date %></br>
-      <%= t "book.rate" %> : <%= @book.average_rating %></br>
-      <%= t "book.book_index_number_of_page"%> : <%= @book.number_of_page %></br>
+      <b><h3><%= @book.title %></h3></b></br>
+      <b><%= t "book.book_index_author" %></b> : <%= @book.author %></br>
+      <b><%= t "book.book_index_publish_date" %></b> :
+        <%= @book.publish_date.to_date.strftime("%d - %B - %Y") %></br>
+      <b><%= t "book.rate" %></b> : <%= @book.average_rating %></br>
+      <b><%= t "book.book_index_number_of_page"%></b> : <%= @book.number_of_page %></br>
     </div>
+    </br>
     <div class="row">
       <%= link_to t("book.edit"), edit_admin_book_path(@book),
         class: "glyphicon glyphicon-pencil" %>
@@ -19,15 +20,18 @@
         class: "glyphicon glyphicon-trash text-danger", method: :delete,
         data: {confirm: t("flash.check")} %>
     </div>
+    </br>
     <div class="row">
       <%= link_to t("review.add"), new_admin_book_review_path(@book) %>
     </div>
   </div>
   <div class="col-md-6">
     <div class="row">
-      <%= t "book.description" %></br><%= @book.description %><br>
+      <b><h1><%= t "book.description" %></h1></b></br><%= @book.description %><br>
+      </br>
       <h1><%= t "review.review_index_name" %><h1>
     </div>
+    </br>
     <div class="row">
       <%= render @reviews %>
     </div>
