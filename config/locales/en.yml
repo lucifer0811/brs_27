@@ -136,6 +136,7 @@ en:
     update: "Update Category"
     action: "Action"
     edit: "Edit"
+    book: "All book in Category: "
   user_relationship:
     stats_following: "Following"
     stats_followers: "Followers"

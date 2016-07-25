@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :categories, only: :index
+  resources :categories, only: [:index, :show]
   resources :books, only: [:index, :show]
   resources :requests, only: [:add, :update]
   resources :books do
