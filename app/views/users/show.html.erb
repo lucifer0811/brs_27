@@ -3,7 +3,7 @@
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %></br>
-        </br><h4><%= @user.name %></h4>
+        </br><h3 align-self= "center"><%= @user.name %></h3>
       </h1>
     </section></br>
     <div class="col-md-8">
@@ -15,7 +15,7 @@
       <%= render "follow_form" if logged_in? %>
     </div>
   </aside>
-  <% if current_user.following? @activity.user %>
+  <% if (current_user.following?(@activity.user) || @activity.user == current_user) %>
     <div class="col-md-8">
       <h3><%= t "users.activity" %></h3>
       <%= render @activities %>
