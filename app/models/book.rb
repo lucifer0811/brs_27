@@ -15,7 +15,7 @@ class Book < ActiveRecord::Base
 
   def average_rating
     if self.reviews.size > 0
-      self.reviews.average(:rating).round(1)
+      self.reviews.average(:rating)
     end
   end
 

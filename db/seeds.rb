@@ -22,7 +22,7 @@ end
     descriptions: descriptions)
 end
 
-30.times do |n|
+5.times do |n|
   name = Faker::Lorem.words(4).map(&:capitalize).join(' ')
   author_name = Faker::Name.name
   date = Faker::Date.between(10.years.ago, 5.years.ago).to_date
@@ -36,26 +36,6 @@ end
     category_id: category,
     description: description
   )
-end
-
-3.times do |n|
-  content = Faker::Lorem.paragraphs.join(' ')
-  title = Faker::Lorem.words(2).join(' ')
-  Review.create!(
-    title: title,
-    user_id: 1,
-    book_id: 1,
-    content: content
-    )
-end
-
-3.times do |n|
-  content = Faker::Lorem.paragraphs.join(' ')
-  Comment.create!(
-    user_id: 1,
-    review_id: 3,
-    content: content
-    )
 end
 
 # Following relationships
