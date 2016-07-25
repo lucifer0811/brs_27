@@ -4,7 +4,7 @@
     <%= activity.message %>
     <%= link_to activity.target_name, activity.target_path %>
     <small> <%= time_ago_in_words(activity.created_at) %> ago </small>|
-    <%= activity.likes.size %> likes
+    <span class="like_count"><%= activity.likes.size %> likes </span>
     <%= render "users/like_form", activity: activity %>
   </ul>
 </div>

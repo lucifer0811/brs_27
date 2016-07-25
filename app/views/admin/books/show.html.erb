@@ -25,15 +25,16 @@
         data: {confirm: t("flash.check")} %>
     </div>
     </br>
-    <div class="row">
-      <%= link_to t("review.add"), new_admin_book_review_path(@book) %>
-    </div>
   </div>
   <div class="col-md-6">
     <div class="row">
       <b><h1><%= t "book.description" %></h1></b></br><%= @book.description %><br>
       </br>
       <h1><%= t "review.review_index_name" %><h1>
+    </div>
+    <div class="row">
+      <%= link_to t("review.add"), new_admin_book_review_path(@book),
+        class: "btn btn-primary glyphicon glyphicon-plus"%>
     </div>
     </br>
     <div class="row">

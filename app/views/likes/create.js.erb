@@ -1,2 +1,3 @@
 $('#like_form_<%= @activity.id %>')
  .html('<%= escape_javascript(render("users/unlike", activity: @activity)) %>');
+$.('#like_count').html('<%= j render(activity.likes.size likes) %>')

@@ -15,11 +15,13 @@
       <%= render "follow_form" if logged_in? %>
     </div>
   </aside>
-  <div class="col-md-8">
-    <h3><%= t "users.activity" %></h3>
-    <%= render @activities %>
-    <%= will_paginate @activities %>
-  </div>
+  <% if current_user.following? @activity.user %>
+    <div class="col-md-8">
+      <h3><%= t "users.activity" %></h3>
+      <%= render @activities %>
+      <%= will_paginate @activities %>
+    </div>
+  <% end %>
 </div>
 <div class="row">
   <h3><%= t "book.favorite" %></h3>

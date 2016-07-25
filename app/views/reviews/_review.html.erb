@@ -1,11 +1,8 @@
 <div class="review-admin">
   <span class="review">
-
     <h4><b><%= link_to review.title, admin_book_review_path(@book, review)%></b>
     <small><%= t "review.rating" %>: <%= review.rating %></small></h4>
-
    <h4> <small>By:</small> <%= link_to review.user.name, review.user %></h4>
-
     <%= review.content %>
     </br>
     </br>
@@ -18,6 +15,6 @@
       method: :delete, data: {confirm: t("flash.check")} do %>
       <span class="glyphicon glyphicon-trash text-danger"></span>
     <% end %>
-    <%= time_ago_in_words review.created_at  %> ago
+    <%= time_ago_in_words review.created_at %> ago
   </span>
 </div>

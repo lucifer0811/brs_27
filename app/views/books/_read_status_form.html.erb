@@ -2,6 +2,6 @@
   <div><%= f.hidden_field :user_id, value: current_user.id %></div>
   <div><%= f.hidden_field :book_id, value: @book.id %></div>
   <%= f.select :reading_status, options_for_select({Unread: :unread, Read: :read,
-    Reading: :reading}, @book_status.reading_status), class: "selectpicker" %>
-  <%= f.submit t "users.submit", class: "btn btn-primary" %>
+    Reading: :reading}, @book_status.reading_status),class: "selectpicker" %>
+  <%= f.submit t("users.submit"), class: "btn btn-success" %>
 <% end %>

@@ -146,7 +146,7 @@ en:
     review_index_name: "Reviews"
     review_index_author: "By"
     review_index_publish_date: "Time"
-    add: "Add review"
+    add: "AddReview"
     delete: "Delete"
     success: "deleted review"
     fail: "review delete fail"
