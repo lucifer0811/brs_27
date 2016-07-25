@@ -16,7 +16,7 @@ class UserRelationshipsController < ApplicationController
   end
 
   def destroy
-    @user = UserRelationship.find_by(params[:id]).followed
+    @user = UserRelationship.find_by(id: params[:id]).followed
     unless @user.nil?
       current_user.unfollow @user
       respond_to do |format|

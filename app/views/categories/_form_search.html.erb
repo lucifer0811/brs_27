@@ -1,0 +1,14 @@
+<div class="custom-search-input">
+  <%= form_tag(categories_path, method: :get) do %>
+    <ul>
+      <li>
+        <%= label_tag :search %>
+        <%= text_field_tag :search, params[:search], class: "form-group",
+          placeholder: t("placeholder.search_category")%>
+      </li>
+      <li>
+        <%= submit_tag t("book.search"), class: "btn btn-primary" %>
+      </li>
+    </ul>
+  <% end %>
+</div>

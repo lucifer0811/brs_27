@@ -192,6 +192,7 @@ en:
     title: "Title......"
     review: "Compose new review..."
     search: "search by title or author...."
+    search_category: "search by category name...."
   model:
     activity:
       recent_action: "Recent actions"

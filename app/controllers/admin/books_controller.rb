@@ -13,8 +13,13 @@ class Admin::BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all.order("created_at DESC").paginate page: params[:page],
-      per_page: Settings.users.per_page
+    if params[:search]
+      @books = Book.search(params[:search]).order("created_at DESC")
+      .paginate page: params[:page], per_page: Settings.users.per_page
+    else
+      @books = Book.order("created_at DESC")
+      .paginate page: params[:page], per_page: Settings.users.per_page
+    end
   end
 
   def create

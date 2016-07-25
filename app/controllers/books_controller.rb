@@ -21,7 +21,6 @@ class BooksController < ApplicationController
       @books = Book.order("created_at DESC")
       .paginate page: params[:page], per_page: Settings.users.per_page
     end
-
   end
 
   def create
