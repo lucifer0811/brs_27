@@ -10,15 +10,15 @@ class BookStatus < ActiveRecord::Base
 
   private
   def create_status_activty
-    create_activity user_id, book_id, Activity.target_types[:book_target],
-      Activity.action_types[which_changed]
+      create_activity(user_id, book_id, Activity.target_types[:book_target],
+        Activity.action_types[which_changed]) unless which_changed.nil?
   end
 
   def which_changed
     if self.is_favorite_changed? && self.is_favorite
       :favorite
     elsif self.reading_status_changed?
-      self.reading_status
+      self.reading_status unless self.unread?
     end
   end
 
