@@ -8,7 +8,7 @@ class LikesController < ApplicationController
     @like = current_user.likes.create likes_params
     @activity = @like.activity
     respond_to do |format|
-      format.js
+      format.js {activity = @like.activity}
       format.html {redirect_to :back}
     end
   end
@@ -18,7 +18,7 @@ class LikesController < ApplicationController
     @activity = @like.activity
     @like.destroy
     respond_to do |format|
-      format.js
+      format.js {activity = @like.activity}
       format.html { redirect_to :back}
     end
   end

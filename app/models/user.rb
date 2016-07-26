@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  ratyrate_rater
+
   has_many :requests, dependent: :destroy
   has_many :active_relationships,  class_name:  "UserRelationship",
     foreign_key: "follower_id", dependent:   :destroy

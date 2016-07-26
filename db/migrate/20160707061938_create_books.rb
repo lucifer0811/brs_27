@@ -6,8 +6,6 @@ class CreateBooks < ActiveRecord::Migration
       t.datetime :publish_date
       t.integer :number_of_page
       t.integer :category_id
-      t.string  :rate
-      t.integer :number_of_rate
       t.string :picture
       t.string :description
 

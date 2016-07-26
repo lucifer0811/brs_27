@@ -13,6 +13,8 @@ class Book < ActiveRecord::Base
   mount_uploader :picture, PictureUploader
   validate :picture_size
 
+  ratyrate_rateable "user_rating"
+
   scope :search, ->search {where("title LIKE ? or author LIKE ?",
    "%#{search.squish}%", "%#{search.squish}%")}
 
