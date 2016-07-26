@@ -165,6 +165,7 @@ en:
     updated: "Update success"
     no_update: "Update fail"
     rating: "Rating"
+    title: "Title"
   request:
     created: "Request was created"
     suggest: "Compose new request..."

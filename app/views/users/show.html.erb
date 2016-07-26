@@ -33,6 +33,13 @@
     </div>
   </div>
 <div class="row">
+  <div class="col-md-2">
+    <select name="history">
+      <option value="Favorite">Favorite</option>
+      <option value="Read">Read</option>
+      <option value="Reading">Reading</option>
+    </select>
+  </div>
   <h4 class="favorite_title"><b><%= t "book.favorite" %></b></h4>
   <% if @books.any? %>
     <%= render partial: "books/book_index", locals: {books: @books} %>

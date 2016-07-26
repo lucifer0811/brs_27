@@ -14,6 +14,9 @@ class BookStatus < ActiveRecord::Base
         Activity.action_types[which_changed]) unless which_changed.nil?
   end
 
+  scope :book_read, -> {where reading_status: 1}
+  scope :book_reading, -> {where reading_status: 2}
+
   def which_changed
     if self.is_favorite_changed? && self.is_favorite
       :favorite
