@@ -82,7 +82,6 @@ ActiveRecord::Schema.define(version: 20160714030022) do
     t.integer  "user_id"
     t.integer  "book_id"
     t.text     "content"
-    t.integer  "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "title"

@@ -52,7 +52,7 @@ class Admin::BooksController < ApplicationController
       flash[:success] = t "book.book_delete"
       redirect_to admin_books_path
     else
-      flash[:notice] = t "book.fail"
+      flash[:danger] = t "book.fail"
       redirect_to admin_book_path(@book)
     end
   end

@@ -2,7 +2,6 @@
   <div class="row">
     <span class="review">
       <h4><b><%= link_to review.title, book_review_path(@book, review)%></b>
-      <small><%= t "review.rating" %>: <%= review.rating %></small></h4>
       <h4> <small><%= t "title.by" %></small>
         <%= link_to review.user.name, review.user %></h4>
       <%= review.content %></br>

@@ -7,7 +7,7 @@ class RequestsController < ApplicationController
       flash[:success] = t "request.created"
       redirect_to requests_path
     else
-      flash[:notice] = t "request.fail"
+      flash[:success] = t "request.fail"
       redirect_to root_path
     end
   end

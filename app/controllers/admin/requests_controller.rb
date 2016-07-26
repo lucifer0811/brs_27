@@ -11,7 +11,7 @@ before_action :load_request, only: [:destroy, :update]
     if @request.destroy
       flash[:success] = t "request.destroyed"
     else
-      flash[:notice] = t "request.not_destroyed"
+      flash[:danger] = t "request.not_destroyed"
     end
     redirect_to admin_requests_path
   end
@@ -21,7 +21,7 @@ before_action :load_request, only: [:destroy, :update]
     if @request.save
         flash[:success] = t "request.editted"
     else
-        flash[:notice] = t"request.not_editted"
+        flash[:danger] = t"request.not_editted"
     end
     redirect_to admin_requests_path
   end
@@ -30,7 +30,7 @@ before_action :load_request, only: [:destroy, :update]
   def load_request
     @request = Request.find_by id: params[:id]
     if @request.nil?
-      flash[:notice]= t "request.not_found"
+      flash[:danger]= t "request.not_found"
       redirect_to admin_requests_path
     end
   end

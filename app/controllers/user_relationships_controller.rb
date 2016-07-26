@@ -12,7 +12,6 @@ class UserRelationshipsController < ApplicationController
     else
       flash[:danger] = t "flash.user_nil"
     end
-
   end
 
   def destroy

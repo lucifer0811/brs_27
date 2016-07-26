@@ -13,12 +13,10 @@
       <b><%= t "book.book_index_author" %></b> : <%= @book.author %></br>
       <b><%= t "book.book_index_publish_date" %></b> :
         <%= @book.publish_date.to_date.strftime("%d - %B - %Y") %></br>
-      <b><%= t "book.rate" %></b> : <%= @book.average_rating %></br>
+      <b><%= t "book.rate" %></b> :</br>
       <b><%= t "book.book_index_number_of_page"%></b> :
         <%= @book.number_of_page %></br>
-      <b><%= t "Category"%></b> :
-        <%= link_to @book.category.category_name, category_path(@book.category) %></br>
-    </div>
+      </div>
     </br>
     <%= render "favorite_form" if logged_in? %> </br>
     <%= render "read_status_form" if logged_in? %>

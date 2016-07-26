@@ -3,6 +3,9 @@ class Book < ActiveRecord::Base
 
   validates :title,  presence: true, uniqueness: true
   validates :author,  presence: true
+
+  after_save :downcase_fields
+
   validates_numericality_of :number_of_page, greater_than: 0
   has_many :reviews, dependent: :destroy
   has_many :book_statuses, dependent: :destroy
@@ -13,10 +16,10 @@ class Book < ActiveRecord::Base
   scope :search, ->search {where("title LIKE ? or author LIKE ?",
    "%#{search.squish}%", "%#{search.squish}%")}
 
-  def average_rating
-    if self.reviews.size > 0
-      self.reviews.average(:rating)
-    end
+
+  def downcase_fields
+    self.title.downcase
+    self.author.downcase
   end
 
   def picture_size

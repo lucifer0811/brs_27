@@ -20,9 +20,12 @@
               data:{confirm: t("flash.check")} %>
           </td>
           <td>
-            <%= link_to (t request.is_approved ? "request.approved" :
-              "request.not_approved"), admin_request_path(request),
-               method: :patch %>
+            <% unless request.is_approved %>
+              <%= link_to (t "request.not_approved"), admin_request_path(request),
+                 method: :patch %>
+            <% else %>
+              <%= t "request.approved" %>
+            <% end %>
           </td>
         </tr>
       <% end %>

@@ -19,7 +19,7 @@ class Admin::UsersController < ApplicationController
       flash[:success] = t "users.delete_success"
       redirect_to admin_users_url
     else
-      flash[:notice] =t "flash.user_nil"
+      flash[:danger] =t "flash.user_nil"
       redirect_to admin_users_url
     end
   end

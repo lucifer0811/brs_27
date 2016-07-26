@@ -57,7 +57,7 @@ class Admin::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit :rating, :title, :content, :book_id, :user_id
+    params.require(:review).permit :title, :content, :book_id, :user_id
   end
 
   def find_book

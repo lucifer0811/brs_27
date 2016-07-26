@@ -4,8 +4,6 @@
       <%= f.label :title %>
       <%= f.text_field :title, placeholder: t("placeholder.title"),
         class: "form-control" %>
-      <%= f.label :rating %>
-      <%= f.number_field :rating, in: 1...6, class: "form-control" %>
       <%= f.text_area :content, placeholder: t("placeholder.review"),
         class: "form-control" %>
       <%= f.submit t("users.submit"), class: "btn btn-primary" %>

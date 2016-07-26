@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: {maximum: 255},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+  after_save :downcase_fields
 
   scope :search, ->search {where("name LIKE ? OR email LIKE ?",
     "%#{search.squish}%", "%#{search.squish}%")}
@@ -51,5 +52,10 @@ class User < ActiveRecord::Base
 
   def find_like activity
     self.likes.where(activity_id: activity.id)
+  end
+
+  def downcase_fields
+    self.name.downcase
+    self.email.downcase
   end
 end
