@@ -14,11 +14,9 @@
         <td><%= link_to user.name, user%></td>
         <td><%= user.email %></td>
         <td>
-          <% if !(user.is_admin?) %>
-            <%=link_to [:admin, user], method: :delete,
-              data: {confirm: t("flash.check")} do %>
-              <span class= "glyphicon glyphicon-trash text-danger"></span>
-            <% end %>
+          <%=link_to [:admin, user], method: :delete,
+            data: {confirm: t("flash.check")} do %>
+            <span class= "glyphicon glyphicon-trash text-danger"></span>
           <% end %>
         </td>
       </tr>

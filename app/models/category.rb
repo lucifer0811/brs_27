@@ -6,5 +6,4 @@ class Category < ActiveRecord::Base
   scope :search, ->search {where("category_name LIKE ?",
     "%#{search.squish}%")}
 
-
 end

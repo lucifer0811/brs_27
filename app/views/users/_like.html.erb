@@ -1,8 +1,11 @@
 <span class="like_button">
-  <%= form_for [current_user, current_user.likes.build], class: "form-inline",
-    remote: true do |f| %>
+  <%= form_for [current_user, current_user.likes.build],
+  class: "form-inline" do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :activity_id, value: activity.id %>
-    <%= f.submit t("users.like"), class: "btn btn-primary" %>
+    <%= button_tag(type: "submit", class: "btn btn-primary", id: "button_like",
+      value: "conceal") do %>
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+      <% end %>
   <% end %>
 </span>

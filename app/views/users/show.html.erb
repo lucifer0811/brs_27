@@ -3,27 +3,30 @@
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %></br>
-        </br><h3 align-self= "center"><%= @user.name %></h3>
+        <h3><%= @user.name %></h3>
       </h1>
     </section></br>
     <div class="col-md-8">
-      <section class="stats">
-        <%= render "shared/stats" %>
-      </section>
+      <%= render "shared/stats" %>
     </div>
     <div class="col-md-8">
       <%= render "follow_form" if logged_in? %>
     </div>
   </aside>
-  <% if (current_user.following?(@activity.user) || @activity.user == current_user) %>
     <div class="col-md-8">
-      <h3><%= t "users.activity" %></h3>
-      <%= render @activities %>
-      <%= will_paginate @activities %>
+      <div class="activity_list">
+        <h3><%= t "users.activity" %></h3>
+        <% unless @activities.blank? %>
+          <%= render @activities %>
+          <%= will_paginate @activities %>
+        <% else %>
+          <h3 class="none_activity"><b><%= t "activity.none" %></b></h3>
+        <% end %>
+      </div>
     </div>
-  <% end %>
+
 </div>
 <div class="row">
-  <h3><%= t "book.favorite" %></h3>
+  <h4 class="favorite_title"><b><%= t "book.favorite" %></b></h4>
   <%= render partial: "books/book_index", locals: {books: @books} %>
 </div>

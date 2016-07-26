@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="favorite_book">
+    <ol class="list_favorite" style: "none">
+      <% @books.each do |book| %>
+        <li><b><%= book.title %></b> <%= t "book.by" %>
+          <i><%= book.author %></br></i></li>
+      <% end %>
+    </ol>
+  </div>
+</div>

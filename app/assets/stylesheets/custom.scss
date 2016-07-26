@@ -104,6 +104,11 @@ footer {
 aside {
   section.user_info {
     margin-top: 20px;
+    padding-left: 12px;
+  }
+  h3 {
+    float: left;
+    margin-top: 5px;
   }
   section {
     padding: 10px 0;
@@ -181,6 +186,7 @@ input {
   overflow: auto;
   margin-top: 0px;
   padding: 0px;
+  border-box: 1px solid $gray-medium-light;
   a {
     float: left;
     padding: 0 10px;
@@ -289,11 +295,11 @@ span.picture {
 .like_button {
   border: none;
   color: white;
-  padding: 3px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 10px;
+  font-size: 5px;
+  float: right;
 }
 
 .book-show {
@@ -341,4 +347,32 @@ span.picture {
 
 #book_info {
   margin-top: 30px;
+}
+#favorite_book {
+  padding-right: 20px;
+  margin-right: 20px;
+}
+// .activity_list {
+//   @include background-tile;
+//   // height: 30px;
+//   // width: 50px;
+//   box-sizing: border-box;
+//   margin-top: 1px;
+//   margin-left: 10px;
+// }
+.like_info {
+  @include background-tile;
+  width: 80%;
+  height:75px;
+  border: 1px solid $gray-medium-light;;
+}
+.none_activity {
+  text-align: center;
+}
+#like {
+  margin-left: 0%;
+}
+.favorite_title {
+  padding-top: 20px;
+  padding-left: 30px;
 }

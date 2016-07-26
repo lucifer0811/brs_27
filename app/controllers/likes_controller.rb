@@ -9,6 +9,7 @@ class LikesController < ApplicationController
     @activity = @like.activity
     respond_to do |format|
       format.js
+      format.html {redirect_to :back}
     end
   end
 
@@ -18,6 +19,7 @@ class LikesController < ApplicationController
     @like.destroy
     respond_to do |format|
       format.js
+      format.html { redirect_to :back}
     end
   end
 

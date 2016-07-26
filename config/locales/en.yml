@@ -22,6 +22,7 @@
 en:
   activity:
     list: "List Activity"
+    none: "No Activities"
   button:
     title: "Title"
     author: "Author"
@@ -55,6 +56,7 @@ en:
     rate: "Rate"
     search: "Search"
     favorite: "Favorite books"
+    by: "By"
   comment:
     update: "Update Comment"
     success: "Updated comment"
@@ -128,6 +130,7 @@ en:
     like: "Like"
     unlike: "Unlike"
     activity: "Activity"
+    search: "search by name or email...."
   categories:
     name: "Name"
     description: "Description"
@@ -139,6 +142,7 @@ en:
     action: "Action"
     edit: "Edit"
     book: "All book in Category: "
+    no_book: "Category not Book"
   user_relationship:
     stats_following: "Following"
     stats_followers: "Followers"

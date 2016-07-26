@@ -1,24 +1,29 @@
 <h1><%= t "categories.book" %><%= @category.category_name %></h1>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th><%= t "title.stt" %></th>
-      <th><%= t "book.book_index_name" %></th>
-      <th><%= t "book.book_index_author" %></th>
-      <th><%= t "book.book_index_publish_date" %></th>
-      <th><%= t "book.book_index_number_of_page" %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @books.each_with_index do |book, index| %>
-      <tr>
-        <td><%= index + 1 %></td>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= book.publish_date.to_date %></td>
-        <td><%= book.number_of_page %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="row">
+  <% unless @books.blank?%>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th><%= t "title.stt" %></th>
+          <th><%= t "book.book_index_name" %></th>
+          <th><%= t "book.book_index_author" %></th>
+          <th><%= t "book.book_index_publish_date" %></th>
+          <th><%= t "book.book_index_number_of_page" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each_with_index do |book, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= book.title %></td>
+            <td><%= book.author %></td>
+            <td><%= book.publish_date.to_date %></td>
+            <td><%= book.number_of_page %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <h3 class="none_activity"><b><%= t "categories.no_book" %></b></h3>
+  <% end %>
+</div>

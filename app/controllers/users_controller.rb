@@ -32,8 +32,13 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.order(updated_at: :desc).paginate page: params[:page],
-      per_page: Settings.users.per_page
+    if params[:search]
+      @users = User.search(params[:search]).order("created_at DESC")
+        .paginate page: params[:page], per_page: Settings.users.per_page
+    else
+      @users = User.order(updated_at: :desc).paginate page: params[:page],
+        per_page: Settings.users.per_page
+    end
   end
 
   def update

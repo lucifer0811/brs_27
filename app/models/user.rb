@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 
+  scope :search, ->search {where("name LIKE ? OR email LIKE ?",
+    "%#{search.squish}%", "%#{search.squish}%")}
+
   has_secure_password
 
   has_many :requests, dependent: :destroy
