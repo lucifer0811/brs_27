@@ -57,6 +57,7 @@ en:
     search: "Search"
     favorite: "Favorite books"
     by: "By"
+    nofavorite: "No favorite book to show"
   comment:
     update: "Update Comment"
     success: "Updated comment"
@@ -100,6 +101,8 @@ en:
     all_requests: "All requests"
     action: "Action"
     avatar: "Avatar"
+    not_request: "No Request"
+    by: "By: "
   flash:
     danger: "Invalid email/password combination"
     message: "The form contains"
@@ -130,6 +133,7 @@ en:
     like: "Like"
     unlike: "Unlike"
     activity: "Activity"
+    join: "Member since: "
     search: "search by name or email...."
   categories:
     name: "Name"

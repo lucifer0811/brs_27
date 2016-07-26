@@ -4,6 +4,7 @@ class Admin::CategoriesController < ApplicationController
   before_action :check_category, only: :show
 
   def show
+    @books = @category.books
   end
 
   def new

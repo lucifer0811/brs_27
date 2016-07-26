@@ -28,9 +28,13 @@
   </div>
   <div class="col-md-6">
     <div class="row">
-      <b><h1><%= t "book.description" %></h1></b></br><%= @book.description %><br>
-      </br>
-      <h1><%= t "review.review_index_name" %><h1>
+      <div class="border_description">
+        <b><h1 class="description"><%= t "book.description" %></h1></b>
+          <span class="blank_between"></span>
+        </br><span class="text_description"><%= @book.description %></span></br>
+        </br>
+      </div>
+      <h1 class="review"><%= t "review.review_index_name" %><h1>
     </div>
     <div class="row">
       <%= link_to t("review.add"), new_admin_book_review_path(@book),

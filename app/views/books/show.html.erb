@@ -16,6 +16,8 @@
       <b><%= t "book.rate" %></b> : <%= @book.average_rating %></br>
       <b><%= t "book.book_index_number_of_page"%></b> :
         <%= @book.number_of_page %></br>
+      <b><%= t "Category"%></b> :
+        <%= link_to @book.category.category_name, category_path(@book.category) %></br>
     </div>
     </br>
     <%= render "favorite_form" if logged_in? %> </br>
@@ -24,13 +26,13 @@
   </div>
   <div class="col-md-6">
     <div class="row">
-      <b><h1><%= t "book.description" %></h1></b></br><%= @book.description %><br>
-      </br>
-      <h1><%= t "review.review_index_name" %><h1>
-    </div>
-    <div class="row">
-      <%= link_to t("review.add"), new_book_review_path(@book),
-        class: "btn btn-primary glyphicon glyphicon-plus" %>
+      <div class="border_description">
+        <b><h1 class="description"><%= t "book.description" %></h1></b>
+          <span class="blank_between"></span>
+        </br><span class="text_description"><%= @book.description %></span></br>
+        </br>
+      </div>
+      <h1 class="review"><%= t "review.review_index_name" %><h1>
     </div>
     </br>
     <div class="row">
