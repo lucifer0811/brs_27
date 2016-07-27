@@ -1,0 +1,5 @@
+<% if @book_status.is_favorite  %>
+  $('#favorite_form').html('<%= j render("books/unfavorite") %>');
+<% else %>
+  $('#favorite_form').html('<%= j render("books/favorite") %>');
+<% end %>

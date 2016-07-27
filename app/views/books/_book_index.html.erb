@@ -10,7 +10,9 @@
       <% end %>
       <div class="book_view">
         <small><b><%= t "book.title" %></b>: <%= book.title %></small></br>
-        <small><b><%= t "book.author" %></b>: <%= book.author %></small>
+        <small><b><%= t "book.author" %></b>: <%= book.author %></small></br>
+        <small><b><%= t "book.category" %></b>:
+          <%= book.category.category_name %></small>
       </div>
     </div>
   <% end %>

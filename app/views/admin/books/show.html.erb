@@ -25,6 +25,10 @@
         data: {confirm: t("flash.check")} %>
     </div>
     </br>
+    </br>
+      <%= render "favorite_form" if logged_in? %> </br>
+      <%= render "read_status_form" if logged_in? %>
+    </br>
   </div>
   <div class="col-md-6">
     <div class="row">

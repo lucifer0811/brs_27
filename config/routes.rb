@@ -44,6 +44,7 @@ Rails.application.routes.draw do
       resources :comments
     end
     resources :requests, only:[:show, :destroy, :update]
+    resources :book_statuses
   end
   resources :requests, only: [:create, :destroy, :show]
   # The priority is based upon order of creation: first created -> highest priority.
