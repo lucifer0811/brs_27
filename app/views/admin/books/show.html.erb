@@ -13,9 +13,6 @@
       <b><%= t "book.book_index_author" %></b> : <%= @book.author %></br>
       <b><%= t "book.book_index_publish_date" %></b> :
         <%= @book.publish_date.to_date.strftime("%d - %B - %Y") %></br>
-       <div class="small-2 large-2 columns">
-           <%= rating_for @book, "user_rating", imdb_avg: true, disable_after_rate: true %>
-       </div>
          <br>
          <%= rating_for @book, "user_rating", disable_after_rate: false%>
 
@@ -54,5 +51,11 @@
     <div class="row">
       <%= render @reviews %>
     </div>
+
+    <script>
+      $('#favorite_book_panel').hide();
+      $('#read_book_panel').hide();
+      $('#reading_book_panel').hide();
+    </script>
   </div>
 </div>
