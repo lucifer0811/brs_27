@@ -57,6 +57,8 @@ en:
     search: "Search"
     favorite: "Favorite books"
     by: "By"
+    read: "List Book Read"
+    reading: "List Book Reading"
     history: "History read book"
     nofavorite: "No favorite book to show"
   comment:

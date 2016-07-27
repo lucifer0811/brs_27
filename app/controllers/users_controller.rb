@@ -15,13 +15,12 @@ class UsersController < ApplicationController
     end
 
     @book_statuses.book_read.each do |book_status|
-      @reading_books.push(Book.find_by id: book_status.book_id)
+      @read_books.push(Book.find_by id: book_status.book_id)
     end
 
     @book_statuses.book_reading.each do |book_status|
       @reading_books.push(Book.find_by id: book_status.book_id)
     end
-
     @activities = @user.activities.order("created_at DESC")
       .paginate page: params[:page], per_page: Settings.users.per_page
 

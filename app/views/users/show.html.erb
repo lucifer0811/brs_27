@@ -23,8 +23,8 @@
   </aside>
   <div class="col-md-8">
     <div class="activity_list">
-      <h3><%= t "users.activity" %></h3>
       <% unless @activities.blank? %>
+        <h3><%= t "users.activity" %></h3>
         <%= render @activities %>
         <%= will_paginate @activities %>
       <% else %>
@@ -33,30 +33,43 @@
     </div>
   </div>
 </div>
-<div class = "bottom_panel">
-  <div class="row">
-    <div class="select_panel" id="select_panel">
-      <div id="btnfavor" onclick="show('favorite_book_panel');hide('read_book_panel');hide('reading_book_panel')"
-        name="favorite" class="btn btn-primary">Favorite</div>
-      <div id="btnread" onclick="show('read_book_panel');hide('favorite_book_panel');hide('reading_book_panel')"
-        name="read" class="btn btn-primary">Read</div>
-      <div id="btnreading" onclick="show('reading_book_panel');hide('read_book_panel');hide('favorite_book_panel')"
-        name="reading" class="btn btn-primary">Reading</div>
-      </div>
-  </div>
-  <div class="row">
-    <div class="main" id="main1">
-      <span>
-        <div class="favorite_book" id="favorite_book_panel">
-          <%= render partial: "history_index", locals: {books: @favorite_books} %>
+<div class="row">
+  <h3 class="history"><%= t "book.history" %></h3>
+  <div class = "bottom_panel">
+    <div class="row">
+      <div class="select_panel" id="select_panel">
+        <div id="btnfavor" onclick="show('favorite_book_panel');
+          hide('read_book_panel');hide('reading_book_panel')"
+          name="favorite" class="btn btn-primary">Favorite</div>
+        <div id="btnread" onclick="show('read_book_panel');
+          hide('favorite_book_panel');hide('reading_book_panel')"
+          name="read" class="btn btn-primary">Read</div>
+        <div id="btnreading" onclick="show('reading_book_panel');
+          hide('read_book_panel');hide('favorite_book_panel')"
+          name="reading" class="btn btn-primary">Reading</div>
         </div>
-        <div class="read_book" id="read_book_panel">
-          <%= render partial: "history_index", locals: {books: @read_books} %>
-        </div>
-        <div class="reading_book" id="reading_book_panel">
-          <%= render partial: "history_index", locals: {books: @reading_books} %>
-        </div>
-      </span>
     </div>
+    <div class="row">
+      <div class="main" id="main1">
+        <span>
+          <div class="favorite_book" id="favorite_book_panel">
+            <%= render partial: "history_index", locals: {books: @favorite_books} %>
+          </div>
+          <div class="read_book" id="read_book_panel">
+            <%= render partial: "history_index", locals: {books: @read_books} %>
+          </div>
+          <div class="reading_book" id="reading_book_panel">
+            <%= render partial: "history_index", locals: {books: @reading_books} %>
+          </div>
+        </span>
+      </div>
+    </div>
+    <script>
+      $('#favorite_book_panel').hide();
+      $('#read_book_panel').hide();
+      $('#reading_book_panel').hide();
+    </script>
   </div>
 </div>
+
+
