@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = t "static_pages.home_title"
-      redirect_to controller: 'books', action: 'index'
+      redirect_to login_url
     else
       render :new
     end
