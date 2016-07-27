@@ -2,3 +2,5 @@ enabled_locales: ["en"]
 users:
   per_page: 5
   size: "400x300"
+books:
+  per_page_book: 8

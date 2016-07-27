@@ -1,0 +1,17 @@
+<div class="row">
+  <% books.each do |book| %>
+    <div class="col-md-3" id="book_info">
+      <% if book.picture? %>
+        <%= link_to image_tag(book.picture.url,
+          class: "book-show"), book_path(book) %>
+      <% else %>
+        <%= link_to image_tag("defaultcover.jpg", class: "book-show"),
+          book_path(book) %>
+      <% end %>
+      <div class="book_view">
+        <small><b><%= t "book.title" %></b>: <%= book.title %></small></br>
+        <small><b><%= t "book.author" %></b>: <%= book.author %></small>
+      </div>
+    </div>
+  <% end %>
+</div>

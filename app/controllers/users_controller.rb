@@ -5,13 +5,26 @@ class UsersController < ApplicationController
   before_action :load_activity, only: :show
 
   def show
-    @book_statuses=BookStatus.correct_user(params[:id]).filter_favorite
-    @books=[]
-    @book_statuses.each do |book_status|
-      @books.push(Book.find_by id: book_status.book_id)
+    @book_statuses= @user.book_statuses
+    @favorite_books = []
+    @read_books = []
+    @reading_books = []
+
+    @book_statuses.filter_favorite.each do |book_status|
+      @favorite_books.push(Book.find_by id: book_status.book_id)
     end
+
+    @book_statuses.book_read.each do |book_status|
+      @reading_books.push(Book.find_by id: book_status.book_id)
+    end
+
+    @book_statuses.book_reading.each do |book_status|
+      @reading_books.push(Book.find_by id: book_status.book_id)
+    end
+
     @activities = @user.activities.order("created_at DESC")
       .paginate page: params[:page], per_page: Settings.users.per_page
+
   end
 
   def new

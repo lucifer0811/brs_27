@@ -15,10 +15,10 @@ class Admin::BooksController < ApplicationController
   def index
     if params[:search]
       @books = Book.search(params[:search]).order("created_at DESC")
-        .paginate page: params[:page], per_page: Settings.users.per_page
+        .paginate page: params[:page], per_page: Settings.books.per_page_book
     else
       @books = Book.order("created_at DESC")
-        .paginate page: params[:page], per_page: Settings.users.per_page
+        .paginate page: params[:page], per_page: Settings.books.per_page_book
     end
   end
 

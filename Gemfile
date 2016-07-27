@@ -10,6 +10,8 @@ gem "will_paginate", "3.0.7"
 gem "bootstrap-will_paginate", "0.0.10"
 # Use SCSS for stylesheets
 gem "config"
+gem "therubyracer"
+gem "execjs"
 gem "sass-rails", "~> 5.0"
 gem "carrierwave", "0.10.0"
 gem "mini_magick", "3.8.0"

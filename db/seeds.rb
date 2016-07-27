@@ -22,7 +22,7 @@ end
     descriptions: descriptions)
 end
 
-5.times do |n|
+12.times do |n|
   name = Faker::Lorem.words(4).map(&:capitalize).join(' ')
   author_name = Faker::Name.name
   date = Faker::Date.between(10.years.ago, 5.years.ago).to_date
