@@ -20,3 +20,8 @@ $(document).on 'ready page:load', ->
   $('div.alert-success').delay(3000).slideUp()
   cancel_function = ->
     window.history.back()
+$(document).ready(function(){
+        $('#favorite_book_panel').hide();
+        $('#read_book_panel').hide();
+        $('#reading_book_panel').hide();
+      })
