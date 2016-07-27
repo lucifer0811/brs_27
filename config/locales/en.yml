@@ -106,6 +106,9 @@ en:
     avatar: "Avatar"
     not_request: "No Request"
     by: "By: "
+    favorite: "Favorite"
+    read: "Read"
+    reading: Reading
   flash:
     danger: "Invalid email/password combination"
     message: "The form contains"
