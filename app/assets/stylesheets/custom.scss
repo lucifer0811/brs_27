@@ -266,6 +266,7 @@ span.picture {
 }
 
 .review {
+  font-style: italic;
   padding-bottom: 2px;
 }
 
@@ -383,10 +384,6 @@ span.picture {
   background-color: none;
   border-bottom: 1px solid $gray-medium-light;
 }
-.review {
-  background-color: #DCDCDC;
-  font-style: italic;
-}
 .border_description {
   @include background-tile;
 }
@@ -417,6 +414,14 @@ span.picture {
 border: 1px solid $gray-medium-light;
 padding-bottom: 20px;
 }
-.navbar navbar-fixed-top navbar-inverse {
-  background-color: blue;
+.show_book {
+  padding-left: 30px;
+  background-color: $gray-medium-light;
+  box-shadow: 5px 5px 5px #888888;
+  margin-right: 50px;
+  padding-top: 5px;
+}
+.action_book {
+  float: right;
+  padding-right: 30px;
 }

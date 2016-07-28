@@ -1,30 +1,33 @@
 <div class="row">
   <div class="col-md-6">
-    <div class="row">
-    <% if @book.picture? %>
-      <%= image_tag(@book.picture.url, size: Settings.users.size,
-        class: "img-thumbnail") %>
-    <% else %>
-      <%= image_tag("defaultcover.jpg") %>
-    <% end %>
-    </div>
-    <div class="row">
-      <b><h3><%= @book.title %></h3></b></br>
-      <b><%= t "book.book_index_author" %></b> : <%= @book.author %></br>
-      <b><%= t "book.book_index_publish_date" %></b> :
-        <%= @book.publish_date.to_date.strftime("%d - %B - %Y") %></br>
-        <br>
+    <div class="show_book">
+      <div class="row">
+        <% if @book.picture? %>
+          <%= image_tag(@book.picture.url, size: Settings.users.size,
+            class: "img-thumbnail") %>
+        <% else %>
+          <%= image_tag("defaultcover.jpg") %>
+        <% end %>
+      </div>
+      <div class="row">
+        <b><h3><%= @book.title %></h3></b>
+        <b><%= t "book.book_index_author" %></b> : <%= @book.author %></br>
+        <b><%= t "book.book_index_publish_date" %></b> :
+          <%= @book.publish_date.to_date.strftime("%d - %B - %Y") %>
         <%= rating_for @book, "user_rating", disable_after_rate: false%>
-      <br>
-      <b><%= t "book.book_index_number_of_page"%></b> : <%= @book.number_of_page %></br>
-    </div>
+        <br>
+        <b><%= t "book.book_index_number_of_page"%></b> : <%= @book.number_of_page %>
+        <div class="action_book">
+          <%= link_to edit_admin_book_path(@book) do %>
+            <span class="glyphicon glyphicon-pencil" %></span>
+          <% end %>
+          <%= link_to [:admin, @book], method: :delete,
+            data: {confirm: t("flash.check")} do %>
+            <span class="glyphicon glyphicon-trash text-danger"></span>
+          <% end %>
+        </div>
+      </div>
     </br>
-    <div class="row">
-      <%= link_to t("book.edit"), edit_admin_book_path(@book),
-        class: "glyphicon glyphicon-pencil" %>
-      <%= link_to t("book.delete"), [:admin, @book],
-        class: "glyphicon glyphicon-trash text-danger", method: :delete,
-        data: {confirm: t("flash.check")} %>
     </div>
     </br>
     </br>
