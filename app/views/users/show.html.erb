@@ -1,6 +1,6 @@
 <%= javascript_include_tag 'panel.js' %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-4" id="border_user">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %></br>
@@ -21,7 +21,7 @@
       </div>
     </div>
   </aside>
-  <div class="col-md-8">
+  <div class="col-md-8" id="border_activity">
     <div class="activity_list">
       <% unless @activities.blank? %>
         <h3><%= t "users.activity" %></h3>
@@ -33,7 +33,7 @@
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row" id="history">
   <h3 class="history"><%= t "book.history" %></h3>
   <div class = "bottom_panel">
     <div class="row">
@@ -64,12 +64,5 @@
         </span>
       </div>
     </div>
-    <script>
-      $("#favorite_book_panel").hide();
-      $("#read_book_panel").hide();
-      $("#reading_book_panel").hide();
-    </script>
   </div>
 </div>
-
-

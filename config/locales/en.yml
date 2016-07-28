@@ -152,7 +152,7 @@ en:
     action: "Action"
     edit: "Edit"
     book: "All book in Category: "
-    no_book: "Category not Book"
+    no_book: "No book of category"
   user_relationship:
     stats_following: "Following"
     stats_followers: "Followers"

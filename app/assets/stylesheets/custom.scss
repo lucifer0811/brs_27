@@ -409,3 +409,14 @@ span.picture {
   margin-bottom: 20px;
   margin-left: 24px;
 }
+#border_user {
+  border: 1px solid $gray-medium-light;
+  padding-bottom: 20px;
+}
+#history {
+border: 1px solid $gray-medium-light;
+padding-bottom: 20px;
+}
+.navbar navbar-fixed-top navbar-inverse {
+  background-color: blue;
+}
