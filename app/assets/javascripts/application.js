@@ -15,11 +15,11 @@
 //= require bootstrap
 //= require jquery.raty
 //= require ratyrate
-$(document).on 'ready page:load', ->
-  $('div.alert-danger').delay(3000).slideUp()
-  $('div.alert-success').delay(3000).slideUp()
-  cancel_function = ->
-    window.history.back()
+//$(document).on 'ready page:load', ->
+//  $('div.alert-danger').delay(3000).slideUp()
+//  $('div.alert-success').delay(3000).slideUp()
+// cancel_function = ->
+//    window.history.back()
 $(document).ready(function(){
         $('#favorite_book_panel').hide();
         $('#read_book_panel').hide();

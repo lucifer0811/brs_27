@@ -4,8 +4,13 @@ class RequestsController < ApplicationController
   def create
     @request = current_user.requests.build request_params
     if @request.save
-      flash[:success] = t "request.created"
-      redirect_to requests_path
+      respond_to do |format|
+        format.html do
+          flash[:success] = t "request.created"
+          redirect_to requests_path
+        end
+        format.js {@request_js = @request}
+      end
     else
       flash[:success] = t "request.fail"
       redirect_to root_path
