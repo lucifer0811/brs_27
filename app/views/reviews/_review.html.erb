@@ -7,6 +7,9 @@
         <%= link_to review.user.name, review.user %></h4>
       <%= review.content %></br>
       <div class="action_review">
+        <%= review.comments.size %>
+          <%= link_to t("review.comment"),
+            book_review_path(@book, review) %> |
         <% if current_user? review.user %>
           <%= link_to edit_book_review_path(review.book, review) do %>
             <span class= "glyphicon glyphicon-pencil" ></span>

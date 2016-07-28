@@ -21,7 +21,7 @@
 // cancel_function = ->
 //    window.history.back()
 $(document).ready(function(){
-        $('#favorite_book_panel').hide();
-        $('#read_book_panel').hide();
-        $('#reading_book_panel').hide();
-      })
+  $('#favorite_book_panel').hide();
+  $('#read_book_panel').hide();
+  $('#reading_book_panel').hide();
+})

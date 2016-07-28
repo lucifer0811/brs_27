@@ -152,7 +152,7 @@ en:
     action: "Action"
     edit: "Edit"
     book: "All book in Category: "
-    no_book: "Category not Book"
+    no_book: "No book of category"
   user_relationship:
     stats_following: "Following"
     stats_followers: "Followers"
@@ -172,10 +172,11 @@ en:
     no_update: "Update fail"
     rating: "Rating"
     title: "Title"
+    comment: "Comment"
   request:
-    created: "Request was created"
+    created: "Request was send to admin..."
     suggest: "Compose new request..."
-    post: "Post"
+    post: "Send"
     fail: "Request is not created"
     destroyed: "Request is destroyed"
     not_destroyed: "Request is not destroyed"
