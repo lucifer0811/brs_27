@@ -1,10 +1,11 @@
- var html = ""
-html += ''
-html += "<tr><td>" + "1" + "</td>";html += "<td>" + <%= link_to @request_js.user.name, @request_js.user %> + "</td>"
-html += "<td>" + <%= @request_js.book_name %> + "</td>"
-html += "<td>" + <%= t @request_js.is_approved ? "request.approved" : "request.not_approved" %> + "</td></tr>"
+var html = "";
+html += '';
+html += "<tr><td>" + "1" + "</td>";
+html += "<td>" + '<%= link_to @request_js.user.name, @request_js.user %>' + "</td>"
+html += "<td>" + '<%= @request_js.book_name %>' + "</td>"
+html += "<td>" + '<%= t @request_js.is_approved ? "request.approved" : "request.not_approved" %>' + "</td></tr>"
 
 
-$("#request-table tbody").prepend($(html).fadeIn('fast'))
-$("#request_form").val('')
-$("#request_form").focus()
+$('#request-table tbody').prepend($(html).fadeIn('fast'))
+$('#request_form').val('')
+$('#request_form').focus()
